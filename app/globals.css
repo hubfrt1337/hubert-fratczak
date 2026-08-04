@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+/* --------------------------------------------------------------------------
+   Paleta i typografia — jedno miejsce, w którym zmieniasz wygląd całej strony.
+   Kolor bazowy: grafit (ink). Kolor akcentu: ceglana pomarańcz (accent).
+   -------------------------------------------------------------------------- */
+@theme {
+  --color-ink-50: #f6f7f9;
+  --color-ink-100: #eceef2;
+  --color-ink-200: #d5dae2;
+  --color-ink-300: #b0b9c8;
+  --color-ink-400: #8492a7;
+  --color-ink-500: #64738c;
+  --color-ink-600: #4e5a70;
+  --color-ink-700: #3f485a;
+  --color-ink-800: #2b3140;
+  --color-ink-900: #191d27;
+  --color-ink-950: #0e1116;
+
+  /* accent-600 na białym tle: kontrast 4.6:1 — biały tekst na przycisku spełnia WCAG AA */
+  --color-accent-50: #fdf3ef;
+  --color-accent-100: #fbe3d9;
+  --color-accent-200: #f6c3b0;
+  --color-accent-300: #ef9a7c;
+  --color-accent-400: #e56a45;
+  --color-accent-500: #d9532c;
+  --color-accent-600: #d14415;
+  --color-accent-700: #a8340f;
+  --color-accent-800: #7f2810;
+
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* sticky header nie zasłania sekcji przy skoku do kotwicy */
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-ink-800);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    color: var(--color-ink-950);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-600);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    /* Elementy z komponentu Reveal są od razu widoczne — Framer Motion nadal
+       ustawia style inline, dlatego potrzebne jest !important. */
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+}
+
+/* Bazowy przycisk jako utility — dzięki temu można go rozszerzać przez @apply. */
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200;
+}
+
+@layer components {
+  .btn-primary {
+    @apply btn bg-accent-600 text-white hover:bg-accent-700;
+  }
+  .btn-secondary {
+    @apply btn border border-ink-200 bg-white text-ink-900 hover:border-ink-300 hover:bg-ink-50;
+  }
+  .btn-ghost-dark {
+    @apply btn border border-white/25 text-white hover:bg-white/10;
+  }
+  .field {
+    @apply w-full rounded-xl border border-ink-200 bg-white px-4 py-3 text-base text-ink-900 placeholder:text-ink-400 focus:border-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-600/20;
+  }
+  .label {
+    @apply mb-2 block text-sm font-medium text-ink-800;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-accent-700;
+  }
+}
