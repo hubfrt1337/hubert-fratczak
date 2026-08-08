@@ -6,7 +6,8 @@
 export const site = {
   name: "Hubert Frątczak",
   role: "Tworzenie stron internetowych",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://twoja-domena.pl",
+  /** Adres kanoniczny — z www, bo Vercel przekierowuje bezhostową wersję na www. */
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.hubertfratczak.pl",
 
   email: "hubert.fratczak@onet.com.pl",
   phone: "+48 792 760 270",

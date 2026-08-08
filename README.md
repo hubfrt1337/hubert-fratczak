@@ -201,22 +201,22 @@ git push -u origin main
 | --- | --- |
 | `NEXT_PUBLIC_FORM_ENDPOINT` | endpoint z punktu 3 |
 | `NEXT_PUBLIC_WEB3FORMS_KEY` | klucz Web3Forms (przy Formspree zostaw pusty) |
-| `NEXT_PUBLIC_SITE_URL` | `https://twoja-domena.pl` |
+| `NEXT_PUBLIC_SITE_URL` | `https://www.hubertfratczak.pl` (z `www` — na to przekierowuje Vercel) |
 
 > `NEXT_PUBLIC_SITE_URL` musi być ustawiony **przed** buildem — trafia do metadanych
 > Open Graph, `sitemap.xml` i `robots.txt`. Po zmianie zrób redeploy.
 
 4. **Deploy**. Każdy `git push` do `main` automatycznie publikuje nową wersję.
 
-### Własna domena
+### Domena
 
-1. Vercel → projekt → **Settings → Domains → Add** → wpisz `twoja-domena.pl`.
-2. U rejestratora domeny (OVH, home.pl, nazwa.pl…) ustaw rekordy DNS:
-   - `A` dla `@` → `76.76.21.21`
-   - `CNAME` dla `www` → `cname.vercel-dns.com`
-   (Vercel pokaże aktualne wartości — użyj tych z panelu.)
-3. Poczekaj na propagację (zwykle kilkanaście minut). Certyfikat SSL Vercel wystawia sam.
-4. Zaktualizuj `NEXT_PUBLIC_SITE_URL` na finalny adres i zrób redeploy.
+Domena **www.hubertfratczak.pl** jest już podpięta w Vercelu, z przekierowaniem
+z wersji bez `www` na wersję z `www`. Dlatego `NEXT_PUBLIC_SITE_URL` musi być ustawiony
+na `https://www.hubertfratczak.pl` — adres kanoniczny, sitemapa i tagi Open Graph mają
+wskazywać dokładnie ten adres, na którym użytkownik faktycznie ląduje. Gdyby stała tam
+wersja bez `www`, Google widziałby dwa warianty tej samej strony.
+
+Zmiana domeny w przyszłości = podmiana tej jednej zmiennej + redeploy. Nic w kodzie.
 
 ---
 
