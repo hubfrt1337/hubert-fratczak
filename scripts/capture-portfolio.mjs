@@ -55,7 +55,7 @@ const targets = [
   },
   {
     file: "projekt-2.png",
-    url: "https://daria-portfolio-six.vercel.app/",
+    url: "https://www.dariazietek.pl/",
     viewport: { width: 1600, height: 900 }, // 16:9 — pierwszy ekran w całości
   },
   {

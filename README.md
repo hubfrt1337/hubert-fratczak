@@ -85,7 +85,7 @@ sekcji, a nie w połowie tekstu:
 | Plik | Strona | Kadr |
 | --- | --- | --- |
 | `projekt-1.png` | stworzcv.com | viewport 1024×576 — header + cała niebieska sekcja hero, ani piksela dalej (przy 1024 px menu jest jeszcze w wersji desktopowej, a hero ma równo 16:9) |
-| `projekt-2.png` | daria-portfolio | viewport 1600×900 — hero na pełny ekran |
+| `projekt-2.png` | www.dariazietek.pl | viewport 1600×900 — hero na pełny ekran |
 | `projekt-3.png` | otsz.pl | viewport 1166×656 — kadr do końca granatowej sekcji hero |
 
 Na końcu skrypt składa jeszcze `public/hero.png` — kaskadę trzech okien z tych samych

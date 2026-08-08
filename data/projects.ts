@@ -27,7 +27,7 @@ export const projects: Project[] = [
     goal: "Wizytówka zawodowa dla modelki — strona, którą wysyła się agencjom i fotografom zamiast folderu ze zdjęciami.",
     work: "Kinowy, ciemny layout ze złotym akcentem, pełnoekranowe hero, galeria sesji i sekcja kontaktowa. Zdjęcia ładowane progresywnie, żeby strona nie zwalniała.",
     result: "Kompletne portfolio pod jednym linkiem, czytelne również na telefonie — bez wysyłania ciężkich plików mailem.",
-    href: "https://daria-portfolio-six.vercel.app",
+    href: "https://www.dariazietek.pl",
   },
   {
     name: "OTSZ — Ogólnopolskie Towarzystwo Szachowe",
