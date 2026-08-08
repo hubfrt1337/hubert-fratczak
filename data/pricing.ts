@@ -14,7 +14,7 @@ export type Plan = {
 export const plans: Plan[] = [
   {
     name: "Wizytówka",
-    price: "400",
+    price: "600",
     time: "1–3 dni",
     tagline: "Dla firm, które potrzebują być w sieci i wyglądać poważnie.",
     features: [
@@ -28,7 +28,7 @@ export const plans: Plan[] = [
   },
   {
     name: "Standard",
-    price: "1 000",
+    price: "1 500",
     time: "od 7 dni",
     tagline: "Rozbudowana strona firmowa z podstronami i blogiem.",
     features: [
@@ -44,7 +44,7 @@ export const plans: Plan[] = [
   },
   {
     name: "Sklep i integracje",
-    price: "1 500",
+    price: "2 500",
     time: "od 2 tygodni",
     tagline: "Sprzedaż online: płatności, wysyłki i systemy sprzedażowe.",
     features: [
@@ -58,6 +58,34 @@ export const plans: Plan[] = [
     budgetHint: "2 500 – 5 000 zł",
   },
 ];
+
+/**
+ * Abonament na opiekę nad stroną — jedyna pozycja rozliczana miesięcznie,
+ * dlatego stoi pod kartami pakietów, a nie obok nich.
+ * Ustaw `carePlan = null`, żeby ukryć całą sekcję.
+ */
+export type CarePlan = {
+  name: string;
+  price: string;
+  period: string;
+  tagline: string;
+  features: string[];
+};
+
+export const carePlan: CarePlan | null = {
+  name: "Opieka nad stroną",
+  price: "80",
+  period: "miesięcznie",
+  tagline:
+    "Dla firm, które wolą o stronie nie myśleć. Przedłużam domenę, pilnuję kopii zapasowych i wprowadzam drobne zmiany — bez wyceniania każdej z osobna.",
+  features: [
+    "Hosting i przedłużanie domeny",
+    "Kopie zapasowe i aktualizacje zabezpieczeń",
+    "Monitoring — wiem o awarii, zanim zauważy ją klient",
+    "30 minut drobnych zmian miesięcznie",
+    "Kontakt bez kolejki, odpowiedź tego samego dnia",
+  ],
+};
 
 /**
  * Mała notka pod cennikiem. Pusty string ("") = nie wyświetla się wcale.

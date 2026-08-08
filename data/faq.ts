@@ -25,6 +25,11 @@ export const faq: FaqItem[] = [
       "Tak. W cenie każdego projektu jest okres wsparcia (30–60 dni zależnie od pakietu), w którym poprawiam wszystkie błędy techniczne bez dodatkowych opłat. Późniejsze zmiany i rozbudowę rozliczam godzinowo lub w ramach stałej opieki — decydujesz sam.",
   },
   {
+    question: "Czy muszę płacić coś co miesiąc?",
+    answer:
+      "Nie musisz. Strona jest Twoja, a domenę i hosting możesz opłacać samodzielnie — pokażę gdzie i jak. Jeśli wolisz o tym nie myśleć, jest opcjonalna opieka od 80 zł miesięcznie: przedłużam domenę, robię kopie zapasowe, pilnuję aktualizacji i wprowadzam drobne zmiany bez wyceniania każdej z osobna. Można ją włączyć i wyłączyć w dowolnym momencie.",
+  },
+  {
     question: "Jak wygląda płatność?",
     answer:
       "Standardowo 30–50% zaliczki na start, reszta po wdrożeniu i Twojej akceptacji. Przy większych projektach dzielimy płatność na etapy. Wystawiam fakturę, rozliczam się przelewem.",
