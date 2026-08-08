@@ -9,7 +9,7 @@ export const site = {
   /** Adres kanoniczny — z www, bo Vercel przekierowuje bezhostową wersję na www. */
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.hubertfratczak.pl",
 
-  email: "hubert.fratczak@onet.com.pl",
+  email: "kontakt@hubertfratczak.pl",
   phone: "+48 792 760 270",
   /** Wersja do linku tel: — bez spacji. */
   phoneHref: "+48792760270",

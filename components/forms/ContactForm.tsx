@@ -40,6 +40,9 @@ export function ContactForm() {
       await submitForm({
         subject: `Nowe zapytanie ze strony — ${String(data.get("name") ?? "")}`,
         from_name: "Formularz kontaktowy",
+        // Web3Forms ustawia to jako Reply-To — odpowiadasz klientowi wprost
+        // z podglądu maila, bez kopiowania adresu.
+        replyto: String(data.get("email") ?? ""),
         name: String(data.get("name") ?? ""),
         email: String(data.get("email") ?? ""),
         budget: String(data.get("budget") ?? ""),

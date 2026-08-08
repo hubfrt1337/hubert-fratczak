@@ -16,7 +16,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const title = `${site.name} — strony internetowe dla małych firm`;
+const title = `${site.name} — strony internetowe dla firm`;
 const description =
   "Projektuję i wdrażam strony internetowe, które przynoszą klientów: wizytówki, sklepy z integracjami i większe serwisy. Konkretna wycena, stały kontakt, wsparcie po wdrożeniu.";
 
