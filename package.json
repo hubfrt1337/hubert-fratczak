@@ -9,7 +9,8 @@
     "lint": "next lint",
     "placeholders": "node scripts/generate-placeholders.mjs",
     "screenshots": "node scripts/capture-portfolio.mjs",
-    "hero": "node scripts/build-hero.mjs"
+    "hero": "node scripts/build-hero.mjs",
+    "og": "node scripts/build-og.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",

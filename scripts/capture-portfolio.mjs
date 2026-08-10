@@ -11,6 +11,7 @@
 import path from "node:path";
 import { createRequire } from "node:module";
 import { buildHero } from "./build-hero.mjs";
+import { buildOg } from "./build-og.mjs";
 
 const PUPPETEER_FROM =
   process.env.PUPPETEER_FROM ?? "C:/Users/Dell/cv-saas-backend";
@@ -108,9 +109,11 @@ try {
     await page.close();
   }
 
-  // Hero na stronie głównej to kolaż z tych samych zrzutów — odświeżamy razem.
-  console.log("→ składam obrazek hero");
-  await buildHero(path.join(process.cwd(), "public"));
+  // Hero i miniatura Open Graph korzystają z tych samych zrzutów — odświeżamy razem.
+  const publicDir = path.join(process.cwd(), "public");
+  console.log("→ składam obrazek hero i miniaturę Open Graph");
+  await buildHero(publicDir);
+  await buildOg(publicDir);
 } finally {
   await browser.close();
 }

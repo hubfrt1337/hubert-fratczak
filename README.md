@@ -22,8 +22,9 @@ Dostępne skrypty:
 | `npm run dev` | serwer developerski |
 | `npm run build` | build produkcyjny (sprawdza też typy) |
 | `npm run start` | podgląd builda produkcyjnego |
-| `npm run placeholders` | regeneruje obrazek Open Graph i ikony w `public/` |
+| `npm run placeholders` | regeneruje favicon i ikonę iOS w `public/` |
 | `npm run hero` | składa `public/hero.png` z miniatur portfolio |
+| `npm run og` | składa `public/og.png` — miniaturę do udostępniania linku |
 | `npm run screenshots` | odświeża zrzuty ekranu realizacji (patrz punkt 2) |
 
 ---
@@ -56,7 +57,7 @@ w kodzie nie trzeba zmieniać:
 | `public/hero.png` | 1200×900 | pierwszy ekran — kolaż z miniatur portfolio, generowany przez `npm run hero` |
 | `public/authorHubert.png` | 800×800 | Twoje zdjęcie w sekcji „O mnie” (już wgrane) |
 | `public/portfolio/projekt-1..3.png` | 1600×900 | miniatury realizacji (16:9) |
-| `public/og.png` | 1200×630 | podgląd przy udostępnianiu linku (Facebook, LinkedIn) |
+| `public/og.png` | 1200×630 | podgląd przy udostępnianiu linku (Facebook, LinkedIn) — generuje `npm run og` |
 | `public/favicon.svg`, `public/apple-touch-icon.png` | 64, 180 | ikona w karcie przeglądarki |
 
 Wszystkie obrazy idą przez `next/image` (automatyczna optymalizacja, WebP, lazy loading —
@@ -88,10 +89,16 @@ sekcji, a nie w połowie tekstu:
 | `projekt-2.png` | www.dariazietek.pl | viewport 1600×900 — hero na pełny ekran |
 | `projekt-3.png` | otsz.pl | viewport 1166×656 — kadr do końca granatowej sekcji hero |
 
-Na końcu skrypt składa jeszcze `public/hero.png` — kaskadę trzech okien z tych samych
-zrzutów, która stoi na pierwszym ekranie. Układ (pozycje, cień, zaokrąglenia) jest
-w [`scripts/build-hero.mjs`](scripts/build-hero.mjs); samo hero przebudujesz przez
-`npm run hero`.
+Na końcu skrypt składa jeszcze dwa obrazki z tych samych zrzutów:
+
+- `public/hero.png` — kaskadę trzech okien na pierwszy ekran ([`scripts/build-hero.mjs`](scripts/build-hero.mjs), osobno: `npm run hero`),
+- `public/og.png` — miniaturę pokazywaną przy wklejeniu linku na Facebooku, LinkedInie
+  czy w Messengerze ([`scripts/build-og.mjs`](scripts/build-og.mjs), osobno: `npm run og`).
+
+> **Po zmianie `og.png` Facebook nadal pokaże stary obrazek** — trzyma go w cache’u
+> tygodniami. Wejdź na [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/),
+> wklej adres strony i kliknij **Scrape Again**. LinkedIn ma swój odpowiednik:
+> [Post Inspector](https://www.linkedin.com/post-inspector/).
 
 Dodajesz nową realizację? Dopisz wpis w tablicy `targets` w skrypcie i w
 [`data/projects.ts`](data/projects.ts).
