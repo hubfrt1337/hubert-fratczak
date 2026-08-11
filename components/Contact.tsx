@@ -34,17 +34,24 @@ export function Contact() {
                     </a>
                   </dd>
                 </div>
-                <div>
-                  <dt className="text-ink-400">Telefon</dt>
-                  <dd>
-                    <a
-                      href={`tel:${site.phoneHref}`}
-                      className="font-medium text-white hover:text-accent-300"
-                    >
-                      {site.phone}
-                    </a>
-                  </dd>
-                </div>
+                {site.phone ? (
+                  <div>
+                    <dt className="text-ink-400">Telefon</dt>
+                    <dd>
+                      <a
+                        href={`tel:${site.phoneHref}`}
+                        className="font-medium text-white hover:text-accent-300"
+                      >
+                        {site.phone}
+                      </a>
+                    </dd>
+                  </div>
+                ) : (
+                  <div>
+                    <dt className="text-ink-400">Czas odpowiedzi</dt>
+                    <dd className="font-medium text-white">do 24 godzin</dd>
+                  </div>
+                )}
               </dl>
             </Reveal>
           </div>

@@ -10,9 +10,13 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.hubertfratczak.pl",
 
   email: "kontakt@hubertfratczak.pl",
-  phone: "+48 792 760 270",
-  /** Wersja do linku tel: — bez spacji. */
-  phoneHref: "+48792760270",
+  /**
+   * Pusty string = telefon w ogóle nie pojawia się na stronie (ani w stopce,
+   * ani w sekcji kontakt). Wpisz numer, żeby go przywrócić.
+   */
+  phone: "",
+  /** Wersja do linku tel: — bez spacji, np. "+48792760270". */
+  phoneHref: "",
   /** Pusty string = miasto nie pojawia się w stopce. */
   city: "",
 

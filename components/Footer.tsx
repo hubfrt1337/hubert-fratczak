@@ -38,11 +38,13 @@ export function Footer() {
                   {site.email}
                 </a>
               </li>
-              <li>
-                <a href={`tel:${site.phoneHref}`} className="hover:text-accent-700">
-                  {site.phone}
-                </a>
-              </li>
+              {site.phone ? (
+                <li>
+                  <a href={`tel:${site.phoneHref}`} className="hover:text-accent-700">
+                    {site.phone}
+                  </a>
+                </li>
+              ) : null}
               {site.city ? <li>{site.city}</li> : null}
             </ul>
           </div>
