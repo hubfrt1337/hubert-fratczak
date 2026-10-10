@@ -50,7 +50,7 @@ export default function PrivacyPolicyPage() {
               <ul className="mt-3 list-disc space-y-2 pl-5">
                 <li>
                   <strong>Formularz kontaktowy</strong> — imię, adres e-mail,
-                  orientacyjny budżet i treść wiadomości. Cel: odpowiedź na
+                  numer telefonu (jeśli go podasz), orientacyjny budżet i treść wiadomości. Cel: odpowiedź na
                   zapytanie i przygotowanie oferty (art. 6 ust. 1 lit. b i f
                   RODO).
                 </li>

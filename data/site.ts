@@ -17,6 +17,12 @@ export const site = {
   phone: "",
   /** Wersja do linku tel: — bez spacji, np. "+48792760270". */
   phoneHref: "",
+  /**
+   * Numer pokazywany dopiero po kliknięciu "Pokaż numer" w sekcji kontakt.
+   * Nie ma go w HTML-u strony, więc proste boty zbierające numery go nie widzą.
+   * Pusty string = karta "Wolisz porozmawiać?" znika.
+   */
+  callPhone: "+48 792 760 270",
   /** Pusty string = miasto nie pojawia się w stopce. */
   city: "",
 

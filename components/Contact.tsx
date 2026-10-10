@@ -1,6 +1,7 @@
 import { Container } from "./ui/Container";
 import { Reveal } from "./ui/Reveal";
 import { ContactForm } from "./forms/ContactForm";
+import { CallReveal } from "./CallReveal";
 import { site } from "@/data/site";
 
 export function Contact() {
@@ -53,6 +54,10 @@ export function Contact() {
                   </div>
                 )}
               </dl>
+            </Reveal>
+
+            <Reveal delay={0.08}>
+              <CallReveal />
             </Reveal>
           </div>
 

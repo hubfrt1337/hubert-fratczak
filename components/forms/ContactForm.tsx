@@ -45,6 +45,7 @@ export function ContactForm() {
         replyto: String(data.get("email") ?? ""),
         name: String(data.get("name") ?? ""),
         email: String(data.get("email") ?? ""),
+        phone: String(data.get("phone") ?? "") || "—",
         budget: String(data.get("budget") ?? ""),
         message: String(data.get("message") ?? ""),
       });
@@ -78,20 +79,43 @@ export function ContactForm() {
         />
       </div>
 
-      <div>
-        <label className="label" htmlFor="email">
-          E-mail <span aria-hidden="true">*</span>
-        </label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          autoComplete="email"
-          className="field"
-          placeholder="jan@firma.pl"
-        />
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label className="label" htmlFor="email">
+            E-mail <span aria-hidden="true">*</span>
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            className="field"
+            placeholder="jan@firma.pl"
+          />
+        </div>
+
+        <div>
+          <label className="label" htmlFor="phone">
+            Telefon <span className="font-normal text-ink-500">(opcjonalnie)</span>
+          </label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            autoComplete="tel"
+            inputMode="tel"
+            pattern="[0-9+\(\)\s\-]{9,20}"
+            title="Wpisz numer telefonu, np. 600 123 456"
+            aria-describedby="phone-hint"
+            className="field"
+            placeholder="600 123 456"
+          />
+        </div>
       </div>
+      <p id="phone-hint" className="-mt-3 text-xs text-ink-500">
+        Zostaw numer, jeśli wolisz, żebym oddzwonił zamiast pisać.
+      </p>
 
       <div>
         <label className="label" htmlFor="budget">
