@@ -11,10 +11,9 @@ export const metadata: Metadata = {
 };
 
 /**
- * SZABLON DO UZUPEŁNIENIA.
- * To wzór, nie porada prawna — przed publikacją uzupełnij [PLACEHOLDERY]
- * i sprawdź, czy treść odpowiada temu, jak faktycznie przetwarzasz dane
- * (formularze, analityka, hosting).
+ * Treść odpowiada stanowi faktycznemu: hosting Vercel, formularze Web3Forms,
+ * poczta Zoho, brak analityki i cookies. Jeśli to się zmieni (np. dodasz
+ * Google Analytics albo Pixel Meta) — zaktualizuj sekcje 3 i 6 oraz datę.
  */
 export default function PrivacyPolicyPage() {
   return (
@@ -24,15 +23,17 @@ export default function PrivacyPolicyPage() {
         <Container className="max-w-3xl">
           <h1 className="text-3xl font-bold sm:text-4xl">Polityka prywatności</h1>
           <p className="mt-3 text-sm text-ink-500">
-            Ostatnia aktualizacja: [DATA_AKTUALIZACJI]
+            Ostatnia aktualizacja: 10 października 2026
           </p>
 
           <div className="mt-10 space-y-8 text-base leading-relaxed text-ink-700">
             <section>
               <h2 className="text-xl font-semibold">1. Administrator danych</h2>
               <p className="mt-3">
-                Administratorem Twoich danych osobowych jest [NAZWA_FIRMY],
-                [ADRES_FIRMY], NIP [NIP]. Kontakt w sprawach danych osobowych:{" "}
+                Administratorem Twoich danych osobowych jest {site.name}, ul. Robocza
+                21a, Poznań. Usługi świadczę w ramach działalności nierejestrowanej
+                (art. 5 ustawy Prawo przedsiębiorców), dlatego nie posługuję się
+                numerem NIP ani REGON. Kontakt w sprawach danych osobowych:{" "}
                 <a
                   href={`mailto:${site.email}`}
                   className="text-accent-700 underline underline-offset-2"
@@ -55,6 +56,12 @@ export default function PrivacyPolicyPage() {
                   RODO).
                 </li>
                 <li>
+                  <strong>Kontakt e-mailowy i telefoniczny</strong> — dane, które
+                  sam przekażesz: imię, adres e-mail, numer telefonu i treść
+                  rozmowy lub wiadomości. Cel: odpowiedź na zapytanie i
+                  przygotowanie oferty (art. 6 ust. 1 lit. b i f RODO).
+                </li>
+                <li>
                   <strong>Formularz opinii</strong> — imię, nazwa firmy, treść
                   opinii oraz zgoda na publikację. Cel: publikacja referencji na
                   stronie (art. 6 ust. 1 lit. a RODO — zgoda).
@@ -71,9 +78,13 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-xl font-semibold">3. Komu przekazuję dane</h2>
               <p className="mt-3">
                 Dane trafiają wyłącznie do podmiotów, które są niezbędne do
-                działania strony: dostawcy hostingu ([HOSTING — np. Vercel Inc.]),
-                dostawcy obsługi formularzy ([DOSTAWCA_FORMULARZY — np. Web3Forms
-                lub Formspree]) oraz dostawcy poczty e-mail ([DOSTAWCA_POCZTY]).
+                działania strony: dostawcy hostingu (Vercel Inc.), dostawcy obsługi
+                formularzy (Web3Forms) oraz dostawcy poczty e-mail (Zoho
+                Corporation B.V., serwery w Unii Europejskiej). Część z nich może
+                przetwarzać dane poza Europejskim Obszarem Gospodarczym — odbywa
+                się to wyłącznie na podstawie mechanizmów przewidzianych w RODO,
+                takich jak standardowe klauzule umowne zatwierdzone przez Komisję
+                Europejską lub decyzja stwierdzająca odpowiedni stopień ochrony.
                 Nie sprzedaję ani nie udostępniam danych w celach marketingowych.
               </p>
             </section>
@@ -83,8 +94,9 @@ export default function PrivacyPolicyPage() {
                 4. Jak długo przechowuję dane
               </h2>
               <p className="mt-3">
-                Korespondencję z zapytań przechowuję przez [OKRES — np. 24
-                miesiące] od ostatniego kontaktu. Opinie publikowane na stronie —
+                Korespondencję z zapytań przechowuję przez 24 miesiące od
+                ostatniego kontaktu, a jeśli dojdzie do współpracy — przez czas
+                jej trwania i do upływu okresu przedawnienia roszczeń. Opinie publikowane na stronie —
                 do czasu wycofania zgody. Dokumentację rozliczeniową przez okres
                 wymagany przepisami podatkowymi (5 lat).
               </p>
@@ -105,11 +117,10 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="text-xl font-semibold">6. Pliki cookies</h2>
               <p className="mt-3">
-                [UZUPEŁNIJ — opisz stan faktyczny. Jeśli nie używasz analityki ani
-                narzędzi marketingowych: „Strona nie używa plików cookies do
-                śledzenia użytkowników ani nie korzysta z narzędzi analitycznych.”
-                Jeśli podepniesz np. Google Analytics — opisz zakres i dodaj baner
-                zgody.]
+                Strona nie zapisuje plików cookies do śledzenia użytkowników i nie
+                korzysta z narzędzi analitycznych ani reklamowych (np. Google
+                Analytics czy Pixel Meta). Dlatego nie wyświetla też banera zgody
+                na cookies.
               </p>
             </section>
 

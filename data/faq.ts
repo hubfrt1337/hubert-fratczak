@@ -32,6 +32,6 @@ export const faq: FaqItem[] = [
   {
     question: "Jak wygląda płatność?",
     answer:
-      "Standardowo 30–50% zaliczki na start, reszta po wdrożeniu i Twojej akceptacji. Przy większych projektach dzielimy płatność na etapy. Wystawiam fakturę, rozliczam się przelewem.",
+      "Standardowo 30–50% zaliczki na start, reszta po wdrożeniu i Twojej akceptacji. Przy większych projektach dzielimy płatność na etapy. Rozliczam się przelewem i wystawiam rachunek. Nie doliczam VAT, więc kwota z wyceny jest kwotą końcową.",
   },
 ];

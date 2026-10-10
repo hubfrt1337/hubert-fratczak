@@ -24,7 +24,7 @@ export const site = {
    */
   callPhone: "+48 792 760 270",
   /** Pusty string = miasto nie pojawia się w stopce. */
-  city: "",
+  city: "Poznań",
 
   // Zostaw pusty string, żeby link nie pojawił się w stopce.
   social: {

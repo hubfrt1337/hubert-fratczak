@@ -12,7 +12,7 @@ export function Pricing() {
         <SectionHeading
           eyebrow="Cennik"
           title="Orientacyjne widełki, bez ukrytych kosztów"
-          description="Ostateczną cenę podaję po krótkiej rozmowie — zależy od liczby podstron, integracji i tego, czy masz gotowe treści. Ceny netto."
+          description="Ostateczną cenę podaję po krótkiej rozmowie — zależy od liczby podstron, integracji i tego, czy masz gotowe treści. Nie doliczam VAT — cena z cennika jest ceną końcową."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">

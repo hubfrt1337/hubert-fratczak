@@ -1,6 +1,6 @@
 export type Plan = {
   name: string;
-  /** Kwota netto "od" — w karcie wyświetla się jako "od X zł". */
+  /** Kwota końcowa "od" (bez VAT — działalność nierejestrowana) — w karcie wyświetla się jako "od X zł". */
   price: string;
   /** Orientacyjny termin realizacji. */
   time: string;
