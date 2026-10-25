@@ -9,6 +9,8 @@
  *   PUPPETEER_FROM=C:/inna/sciezka npm run screenshots
  */
 import path from "node:path";
+import http from "node:http";
+import { readFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { buildHero } from "./build-hero.mjs";
 import { buildOg } from "./build-og.mjs";
@@ -74,10 +76,75 @@ const targets = [
   },
 ];
 
+/**
+ * Projekty bez publicznego adresu (statyczne strony demonstracyjne) serwujemy
+ * na chwilę z dysku — zamiast `url` mają `dir`, a skrypt podstawia adres lokalny.
+ */
+const MIME = {
+  ".html": "text/html; charset=utf-8",
+  ".css": "text/css",
+  ".js": "text/javascript",
+  ".svg": "image/svg+xml",
+  ".webp": "image/webp",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".png": "image/png",
+  ".woff2": "font/woff2",
+  ".json": "application/json",
+};
+
+function serveDir(dir) {
+  const server = http.createServer(async (req, res) => {
+    const urlPath = decodeURIComponent(new URL(req.url, "http://x").pathname);
+    const file = path.join(dir, urlPath.endsWith("/") ? `${urlPath}index.html` : urlPath);
+    try {
+      const body = await readFile(file);
+      res.writeHead(200, { "Content-Type": MIME[path.extname(file)] ?? "application/octet-stream" });
+      res.end(body);
+    } catch {
+      res.writeHead(404);
+      res.end();
+    }
+  });
+  return new Promise((resolve) => {
+    server.listen(0, "127.0.0.1", () => resolve(server));
+  });
+}
+
+const localTargets = [
+  {
+    file: "projekt-4.png",
+    url: "https://mililash.pages.dev/",
+    viewport: { width: 1600, height: 900 },
+  },
+  {
+    file: "projekt-5.png",
+    dir: "D:/projekty/rzesy2",
+    viewport: { width: 1600, height: 900 },
+  },
+  {
+    file: "projekt-6.png",
+    dir: "D:/projekty/paznokcie",
+    viewport: { width: 1600, height: 900 },
+  },
+];
+targets.push(...localTargets);
+
+// Wybrane zrzuty: `npm run screenshots -- projekt-4.png projekt-5.png`
+const only = process.argv.slice(2);
+
 const browser = await puppeteer.launch({ headless: "new" });
 
 try {
   for (const target of targets) {
+    if (only.length && !only.includes(target.file)) continue;
+
+    let server;
+    if (target.dir) {
+      server = await serveDir(target.dir);
+      target.url = `http://127.0.0.1:${server.address().port}/`;
+    }
+
     const page = await browser.newPage();
     await page.setViewport({ ...target.viewport, deviceScaleFactor: SCALE });
 
@@ -107,6 +174,7 @@ try {
     console.log(`  ✓ public/portfolio/${target.file} (${width}×${height})`);
 
     await page.close();
+    server?.close();
   }
 
   // Hero i miniatura Open Graph korzystają z tych samych zrzutów — odświeżamy razem.

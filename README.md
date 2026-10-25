@@ -38,8 +38,8 @@ w VS Code wyszukaj `\[[A-Z_0-9]+\]` z włączonym regexem.
 | Plik | Co zawiera | Placeholdery do uzupełnienia |
 | --- | --- | --- |
 | [`data/site.ts`](data/site.ts) | imię, e-mail, telefon, miasto, social media, menu | uzupełnione; `city` i `social` są puste — po wpisaniu wartości same pojawią się w stopce |
-| [`data/projects.ts`](data/projects.ts) | 3 realizacje (mini case study) | uzupełnione |
-| [`data/pricing.ts`](data/pricing.ts) | 3 pakiety (ceny, terminy), widełki budżetu w formularzu, notka pod cennikiem | uzupełnione |
+| [`data/projects.ts`](data/projects.ts) | projekty w karuzeli pod hero (realizacje, projekt własny, projekty koncepcyjne) | uzupełnione |
+| [`data/pricing.ts`](data/pricing.ts) | 3 pakiety abonamentowe (cena/mies., terminy), warunki nad kartami, pakiety w formularzu, notka pod cennikiem | uzupełnione |
 | [`data/testimonials.ts`](data/testimonials.ts) | opinie klientów | pusta tablica = sekcja się nie wyświetla |
 | [`data/services.ts`](data/services.ts) | 3 karty oferty | — |
 | [`data/process.ts`](data/process.ts) | 4 kroki procesu | — |
@@ -54,9 +54,9 @@ w kodzie nie trzeba zmieniać:
 
 | Plik | Wymiary | Gdzie się pojawia |
 | --- | --- | --- |
-| `public/hero.png` | 1200×900 | pierwszy ekran — kolaż z miniatur portfolio, generowany przez `npm run hero` |
+| `public/hero.png` | 1200×900 | kolaż z miniatur portfolio (`npm run hero`) — obecnie nieużywany, hero pokazuje kartę oferty z `projekt-4` i `projekt-6` w tle |
 | `public/authorHubert.png` | 800×800 | Twoje zdjęcie w sekcji „O mnie” (już wgrane) |
-| `public/portfolio/projekt-1..3.png` | 1600×900 | miniatury realizacji (16:9) |
+| `public/portfolio/projekt-1..6.png` | 1600×900 | miniatury projektów (16:9); `projekt-5/6` to rzesy2 i paznokcie robione z dysku |
 | `public/og.png` | 1200×630 | podgląd przy udostępnianiu linku (Facebook, LinkedIn) — generuje `npm run og` |
 | `public/favicon.svg`, `public/apple-touch-icon.png` | 64, 180 | ikona w karcie przeglądarki |
 

@@ -1,8 +1,6 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { ForWho } from "@/components/ForWho";
 import { Services } from "@/components/Services";
-import { Process } from "@/components/Process";
 import { Portfolio } from "@/components/Portfolio";
 import { Testimonials } from "@/components/Testimonials";
 import { Pricing } from "@/components/Pricing";
@@ -17,10 +15,9 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
-        <ForWho />
-        <Services />
-        <Process />
         <Portfolio />
+        {/* Ukryte 2026-10-25 (decyzja autora): <ForWho /> i <Process /> — komponenty zostają, wystarczy odkomentować. */}
+        <Services />
         {/* Renderuje się dopiero, gdy w data/testimonials.ts pojawią się opinie. */}
         <Testimonials />
         <Pricing />

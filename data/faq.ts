@@ -17,21 +17,26 @@ export const faq: FaqItem[] = [
   {
     question: "Co z domeną i hostingiem?",
     answer:
-      "Mogę je kupić i skonfigurować za Ciebie albo podpiąć się pod te, które już masz. Rejestruję je zawsze na Twoje dane — domena i hosting są Twoją własnością, nie moją. Koszt to zwykle 60–150 zł rocznie za domenę i 0–400 zł rocznie za hosting, zależnie od projektu.",
+      "Hosting jest w cenie abonamentu — nie płacisz za niego osobno. Domenę mogę kupić i skonfigurować za Ciebie albo podpiąć się pod tę, którą już masz. Rejestruję ją zawsze na Twoje dane, więc adres strony jest Twoją własnością od pierwszego dnia.",
   },
   {
     question: "Czy jest gwarancja na poprawki?",
     answer:
-      "Tak. W cenie każdego projektu jest okres wsparcia (30–60 dni zależnie od pakietu), w którym poprawiam wszystkie błędy techniczne bez dodatkowych opłat. Późniejsze zmiany i rozbudowę rozliczam godzinowo lub w ramach stałej opieki — decydujesz sam.",
+      "Tak. Przez cały okres abonamentu poprawiam błędy techniczne bez dodatkowych opłat, pilnuję kopii zapasowych i aktualizacji. Do tego co miesiąc masz w cenie 1 godzinę zmian w wizytówce i 2 godziny w stronie firmowej i sklepie: podmiana tekstów i zdjęć, nowy wpis, drobne poprawki wyglądu. Większe zmiany, np. nowa podstrona czy funkcja, wyceniam osobno — zawsze przed rozpoczęciem pracy.",
   },
   {
-    question: "Czy muszę płacić coś co miesiąc?",
+    question: "Jak działa abonament?",
     answer:
-      "Nie musisz. Strona jest Twoja, a domenę i hosting możesz opłacać samodzielnie — pokażę gdzie i jak. Jeśli wolisz o tym nie myśleć, jest opcjonalna opieka od 80 zł miesięcznie: przedłużam domenę, robię kopie zapasowe, pilnuję aktualizacji i wprowadzam drobne zmiany bez wyceniania każdej z osobna. Można ją włączyć i wyłączyć w dowolnym momencie.",
+      "Nie płacisz nic na start. Stronę robię w ramach abonamentu: 69 zł miesięcznie za wizytówkę, 139 zł za stronę firmową, 219 zł za sklep. W cenie jest hosting, kopie zapasowe, aktualizacje, poprawki błędów i 1–2 godziny zmian co miesiąc (zależnie od pakietu). Umowa jest na 12 miesięcy.",
+  },
+  {
+    question: "Czyja jest strona po 12 miesiącach?",
+    answer:
+      "Twoja. Po 12 miesiącach przenoszę na Ciebie pełne majątkowe prawa autorskie do strony — możesz ją zabrać do innego wykonawcy albo zostać u mnie w abonamencie.",
   },
   {
     question: "Jak wygląda płatność?",
     answer:
-      "Standardowo 30–50% zaliczki na start, reszta po wdrożeniu i Twojej akceptacji. Przy większych projektach dzielimy płatność na etapy. Rozliczam się przelewem i wystawiam rachunek. Nie doliczam VAT, więc kwota z wyceny jest kwotą końcową.",
+      "Płacisz stałą kwotę co miesiąc, bez zaliczki. Rozliczam się przelewem i wystawiam rachunek. Nie doliczam VAT, więc kwota z cennika jest kwotą końcową.",
   },
 ];

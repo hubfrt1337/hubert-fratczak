@@ -1,41 +1,76 @@
 export type Project = {
   name: string;
-  /** Miniatura w /public/portfolio — podmień na zrzut ekranu realizacji. */
+  /** Krótka etykieta branży / typu projektu nad nazwą. */
+  category: string;
+  /** Zrzut w /public/portfolio — odświeża go `npm run screenshots`. */
   image: string;
   imageAlt: string;
-  /** Mini case study: cel → co zrobiłem → efekt. */
-  goal: string;
-  work: string;
-  result: string;
+  /** 1–2 zdania: zakres i to, co projekt daje właścicielowi. */
+  summary: string;
+  /** Technologie i zakres w skrócie — wyświetlane jako małe etykiety. */
+  tags: string[];
   href: string;
 };
 
 export const projects: Project[] = [
   {
-    name: "StwórzCV — kreator CV z AI",
+    name: "Mililash",
+    category: "Salon beauty · system rezerwacji",
+    image: "/portfolio/projekt-4.png",
+    imageAlt: "Strona główna salonu stylizacji rzęs Mililash z Poznania",
+    summary:
+      "Strona salonu zintegrowana z autorskim systemem rezerwacji online: wybór zabiegu i stylistki, wolne terminy w czasie rzeczywistym oraz panel z kalendarzem, grafikiem pracy i synchronizacją z Kalendarzem Google.",
+    tags: ["Next.js", "Supabase", "Rezerwacje online"],
+    href: "https://mililash.pages.dev",
+  },
+  {
+    name: "StwórzCV",
+    category: "Aplikacja SaaS · płatności cykliczne",
     image: "/portfolio/projekt-1.png",
     imageAlt: "Strona główna StwórzCV — kreator CV online z szablonami ATS",
-    goal: "Własny produkt: aplikacja, w której kandydat składa profesjonalne CV w kilka minut, zamiast walczyć z formatowaniem w Wordzie.",
-    work: "Zbudowałem całość — interfejs kreatora, szablony zgodne z ATS, podpowiedzi AI, eksport do PDF, konta użytkowników i płatności online.",
-    result: "Działający serwis z generatorem listów motywacyjnych, dopasowywaniem CV do ogłoszeń i śledzeniem statusu aplikacji.",
-    href: "https://stworzcv.com",
+    summary:
+      "Kreator CV i listów motywacyjnych z kontami użytkowników, eksportem do PDF i subskrypcjami w Stripe. Wersje PL i EN, rozbudowane SEO oraz kampanie Google Ads mierzone aż do sprzedaży.",
+    tags: ["Next.js", "Stripe", "SEO", "Google Ads"],
+    href: "https://www.stworzcv.com",
   },
   {
-    name: "Daria Ziętek — portfolio modelki",
-    image: "/portfolio/projekt-2.png",
-    imageAlt: "Strona główna portfolio modelki Darii Ziętek",
-    goal: "Wizytówka zawodowa dla modelki — strona, którą wysyła się agencjom i fotografom zamiast folderu ze zdjęciami.",
-    work: "Kinowy, ciemny layout ze złotym akcentem, pełnoekranowe hero, galeria sesji i sekcja kontaktowa. Zdjęcia ładowane progresywnie, żeby strona nie zwalniała.",
-    result: "Kompletne portfolio pod jednym linkiem, czytelne również na telefonie — bez wysyłania ciężkich plików mailem.",
-    href: "https://www.dariazietek.pl",
-  },
-  {
-    name: "OTSZ — Ogólnopolskie Towarzystwo Szachowe",
+    name: "Ogólnopolskie Towarzystwo Szachowe",
+    category: "Organizacja · serwis treściowy",
     image: "/portfolio/projekt-3.png",
     imageAlt: "Strona główna Ogólnopolskiego Towarzystwa Szachowego",
-    goal: "Serwis organizacji zrzeszającej pasjonatów szachów: miejsce na artykuły, wydarzenia i informacje o działalności.",
-    work: "Zaprojektowałem identyfikację strony (granat i złoto), sekcję artykułów i kalendarz wydarzeń oraz typografię przygotowaną pod dłuższe teksty.",
-    result: "Artykuły i wydarzenia zebrane w jednym miejscu, zamiast rozproszone po social mediach.",
+    summary:
+      "Serwis organizacji z modułem artykułów i kalendarzem wydarzeń. Identyfikacja wizualna w granacie i złocie oraz typografia przygotowana pod długie teksty.",
+    tags: ["Projekt graficzny", "Artykuły", "Wydarzenia"],
     href: "https://otsz.pl",
+  },
+  {
+    name: "Oriane Lash Atelier",
+    category: "Salon beauty · strona premium",
+    image: "/portfolio/projekt-5.png",
+    imageAlt: "Strona główna atelier stylizacji rzęs Oriane",
+    summary:
+      "Strona atelier z interaktywną mapą rzęs, galerią efektów, opiniami i rezerwacją terminu. Lekki kod bez wtyczek — błyskawiczne ładowanie na telefonie.",
+    tags: ["UX/UI", "Rezerwacje", "Wydajność"],
+    href: "https://oriane-lash-atelier.pages.dev",
+  },
+  {
+    name: "Cerise Nail Studio",
+    category: "Salon beauty · lookbook",
+    image: "/portfolio/projekt-6.png",
+    imageAlt: "Strona główna studia stylizacji paznokci Cerise",
+    summary:
+      "Strona studia manicure z lookbookiem stylizacji, cennikiem, opiniami i formularzem rezerwacji. Projektowana od ekranu telefonu, z którego przychodzi większość klientek.",
+    tags: ["UX/UI", "Galeria", "Mobile first"],
+    href: "https://cerise-nail-studio.pages.dev",
+  },
+  {
+    name: "Daria Ziętek",
+    category: "Portfolio · marka osobista",
+    image: "/portfolio/projekt-2.png",
+    imageAlt: "Strona główna portfolio modelki Darii Ziętek",
+    summary:
+      "Portfolio modelki w kinowej, ciemnej estetyce z galerią sesji i progresywnym ładowaniem zdjęć — jeden link dla agencji i fotografów.",
+    tags: ["Projekt graficzny", "Galeria", "Wydajność"],
+    href: "https://www.dariazietek.pl",
   },
 ];

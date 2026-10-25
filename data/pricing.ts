@@ -1,20 +1,32 @@
 export type Plan = {
   name: string;
-  /** Kwota końcowa "od" (bez VAT — działalność nierejestrowana) — w karcie wyświetla się jako "od X zł". */
+  /** Abonament miesięczny (bez VAT — działalność nierejestrowana) — w karcie wyświetla się jako "X zł / mies.". */
   price: string;
   /** Orientacyjny termin realizacji. */
   time: string;
   tagline: string;
   features: string[];
   highlighted?: boolean;
-  /** Wartość wstawiana do pola "budżet" w formularzu po kliknięciu CTA. */
+  /** Wartość wstawiana do pola "pakiet" w formularzu po kliknięciu CTA. */
   budgetHint: string;
 };
+
+/**
+ * Warunki wspólne dla wszystkich pakietów — wyświetlają się nad kartami.
+ * Pusta tablica = pasek się nie wyświetla.
+ */
+export const subscriptionTerms: string[] = [
+  "0 zł na start",
+  "Umowa na 12 miesięcy",
+  "Hosting w cenie",
+  "Drobne zmiany co miesiąc w cenie",
+  "Po 12 miesiącach pełne prawa do strony",
+];
 
 export const plans: Plan[] = [
   {
     name: "Wizytówka",
-    price: "600",
+    price: "69",
     time: "1–3 dni",
     tagline: "Dla firm, które potrzebują być w sieci i wyglądać poważnie.",
     features: [
@@ -22,13 +34,14 @@ export const plans: Plan[] = [
       "Formularz kontaktowy i mapa dojazdu",
       "Responsywność: telefon, tablet, komputer",
       "Podstawowa optymalizacja SEO",
-      "Wdrożenie na serwerze i podpięcie domeny",
+      "Hosting, wdrożenie i podpięcie domeny",
+      "1 h zmian miesięcznie: teksty, zdjęcia, drobne poprawki",
     ],
-    budgetHint: "do 1 000 zł",
+    budgetHint: "Wizytówka — 69 zł / mies.",
   },
   {
     name: "Standard",
-    price: "1 500",
+    price: "139",
     time: "od 7 dni",
     tagline: "Rozbudowana strona firmowa z podstronami i blogiem.",
     features: [
@@ -37,14 +50,15 @@ export const plans: Plan[] = [
       "Panel do samodzielnej edycji treści",
       "Rozszerzone SEO i Google Analytics",
       "Formularze i integracja z pocztą",
-      "30 dni wsparcia po wdrożeniu",
+      "Hosting, kopie zapasowe i aktualizacje",
+      "2 h zmian miesięcznie: teksty, zdjęcia, drobne poprawki",
     ],
     highlighted: true,
-    budgetHint: "1 000 – 2 500 zł",
+    budgetHint: "Standard — 139 zł / mies.",
   },
   {
     name: "Sklep i integracje",
-    price: "2 500",
+    price: "219",
     time: "od 2 tygodni",
     tagline: "Sprzedaż online: płatności, wysyłki i systemy sprzedażowe.",
     features: [
@@ -53,9 +67,10 @@ export const plans: Plan[] = [
       "Integracje z kurierami i magazynem",
       "Konfiguracja regulaminów i podatków",
       "Szkolenie z obsługi zamówień",
-      "60 dni wsparcia po wdrożeniu",
+      "Hosting, kopie zapasowe i aktualizacje",
+      "2 h zmian miesięcznie: produkty, zdjęcia, drobne poprawki",
     ],
-    budgetHint: "2 500 – 5 000 zł",
+    budgetHint: "Sklep i integracje — 219 zł / mies.",
   },
 ];
 
@@ -63,6 +78,7 @@ export const plans: Plan[] = [
  * Abonament na opiekę nad stroną — jedyna pozycja rozliczana miesięcznie,
  * dlatego stoi pod kartami pakietów, a nie obok nich.
  * Ustaw `carePlan = null`, żeby ukryć całą sekcję.
+ * Ukryta od przejścia na abonament: hosting i opieka są już w cenie pakietów.
  */
 export type CarePlan = {
   name: string;
@@ -72,38 +88,21 @@ export type CarePlan = {
   features: string[];
 };
 
-export const carePlan: CarePlan | null = {
-  name: "Opieka nad stroną",
-  price: "80",
-  period: "miesięcznie",
-  tagline:
-    "Dla firm, które wolą o stronie nie myśleć. Przedłużam domenę, pilnuję kopii zapasowych i wprowadzam drobne zmiany — bez wyceniania każdej z osobna.",
-  features: [
-    "Hosting i przedłużanie domeny",
-    "Kopie zapasowe i aktualizacje zabezpieczeń",
-    "Monitoring — wiem o awarii, zanim zauważy ją klient",
-    "30 minut drobnych zmian miesięcznie",
-    "Kontakt bez kolejki, odpowiedź tego samego dnia",
-  ],
-};
+export const carePlan: CarePlan | null = null;
 
 /**
  * Mała notka pod cennikiem. Pusty string ("") = nie wyświetla się wcale.
  *
  * To miejsce na komunikat, który dotyczy wszystkich pakietów naraz — najczęściej
  * czasową promocję, np.:
- *   "Dla pierwszych trzech klientów w tym miesiącu: -20% na każdy pakiet."
- *   "Do końca marca strona wizytówka z darmową domeną na pierwszy rok."
- * Poniżej wersja bez promocji — po prostu uczciwe zastrzeżenie do cen.
+ *   "Dla pierwszych trzech klientów w tym miesiącu: pierwszy miesiąc gratis."
+ * Poniżej wersja bez promocji — wyjaśnienie, jak działa abonament.
  */
 export const pricingNote =
-  "Podane kwoty to ceny startowe. Ostateczna wycena zależy od liczby podstron, integracji i tego, czy masz gotowe treści — podaję ją po krótkiej rozmowie, bezpłatnie i bez zobowiązań.";
+  "Nie płacisz nic na start — stronę robię w ramach abonamentu, a Ty płacisz stałą kwotę co miesiąc. Po 12 miesiącach przenoszę na Ciebie pełne prawa autorskie do strony. Zakres dopasowuję po krótkiej rozmowie, bezpłatnie i bez zobowiązań.";
 
-/** Widełki budżetu w formularzu kontaktowym. */
+/** Pakiety do wyboru w formularzu kontaktowym. */
 export const budgetOptions = [
-  "do 1 000 zł",
-  "1 000 – 2 500 zł",
-  "2 500 – 5 000 zł",
-  "powyżej 5 000 zł",
+  ...plans.map((plan) => plan.budgetHint),
   "jeszcze nie wiem",
 ];

@@ -26,45 +26,53 @@ export function About() {
             <Reveal>
               <p className="eyebrow">O mnie</p>
               <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-                Cześć, jestem {site.name.split(" ")[0]}
+                {site.name} — strony, aplikacje i marketing internetowy
               </h2>
             </Reveal>
 
             <Reveal delay={0.05}>
               <div className="mt-6 space-y-4 text-base leading-relaxed text-ink-600">
                 <p>
-                  Od czterech lat zawodowo tworzę strony internetowe. Pracuję na
-                  tym samym stacku, na którym stoi ten serwis — Next.js, React
-                  i TypeScript — i prowadzę projekt od pierwszej rozmowy, przez
-                  makietę i kod, aż po wdrożenie i podpięcie domeny. Bez
-                  przekazywania zlecenia dalej i bez tłumaczenia się cudzymi
-                  opóźnieniami.
+                  Projektuję i buduję strony firmowe, sklepy oraz aplikacje webowe
+                  w Next.js, React i TypeScript. Odpowiadam za cały proces: projekt
+                  graficzny, kod, wdrożenie, domenę i hosting — a potem za to, żeby
+                  strona przyprowadzała klientów.
                 </p>
                 <p>
-                  Równolegle rozwijam własny produkt — StwórzCV, kreator CV
-                  z podpowiedziami AI, kontami użytkowników i płatnościami
-                  online. Dzięki temu codziennie mierzę się dokładnie z tym, co
-                  jest ważne dla Twojej strony: szybkością ładowania, widocznością
-                  w Google i tym, żeby formularz kontaktowy naprawdę dowoził
-                  wiadomości.
+                  Na co dzień rozwijam własną aplikację SaaS (StwórzCV) z płatnościami
+                  subskrypcyjnymi, dwiema wersjami językowymi i kampaniami Google Ads
+                  rozliczanymi do realnej sprzedaży. To samo podejście stosuję
+                  u klientów: liczą się zapytania i sprzedaż, a nie sam ruch.
                 </p>
               </div>
             </Reveal>
 
             <Reveal delay={0.1}>
-              <ul className="mt-8 grid gap-4 sm:grid-cols-3">
+              <ul className="mt-8 grid gap-4 sm:grid-cols-2">
                 {[
                   {
-                    label: "Bez pośredników",
-                    text: "Rozmawiasz z osobą, która pisze kod.",
+                    label: "Strony firmowe i landing page",
+                    text: "Indywidualny projekt, szybkie ładowanie, wygoda na telefonie.",
                   },
                   {
-                    label: "Jasna wycena",
-                    text: "Cena i termin ustalone przed startem.",
+                    label: "Sklepy internetowe",
+                    text: "Płatności (Stripe, Przelewy24, BLIK), wysyłki i integracje.",
                   },
                   {
-                    label: "Wsparcie po starcie",
-                    text: "Nie znikam po przekazaniu dostępów.",
+                    label: "Aplikacje webowe",
+                    text: "Systemy rezerwacji, panele klienta, konta i płatności cykliczne.",
+                  },
+                  {
+                    label: "SEO",
+                    text: "Audyt techniczny, indeksacja, Search Console, treści pod frazy.",
+                  },
+                  {
+                    label: "Google Ads",
+                    text: "Kampanie w wyszukiwarce, wykluczenia, koszt liczony do sprzedaży.",
+                  },
+                  {
+                    label: "Analityka",
+                    text: "GA4 i Tag Manager — pomiar formularzy, telefonów i zakupów.",
                   },
                 ].map((item) => (
                   <li
@@ -78,6 +86,13 @@ export function About() {
                   </li>
                 ))}
               </ul>
+            </Reveal>
+
+            <Reveal delay={0.12}>
+              <p className="mt-6 text-sm text-ink-500">
+                Technologie: Next.js · React · TypeScript · Tailwind CSS · Supabase ·
+                Stripe · Vercel · Cloudflare · GA4 · Google Ads
+              </p>
             </Reveal>
 
             <Reveal delay={0.15}>

@@ -119,7 +119,7 @@ export function ContactForm() {
 
       <div>
         <label className="label" htmlFor="budget">
-          Orientacyjny budżet
+          Pakiet
         </label>
         <select
           id="budget"
@@ -128,7 +128,7 @@ export function ContactForm() {
           value={budget}
           onChange={(event) => setBudget(event.target.value)}
         >
-          <option value="">Wybierz widełki</option>
+          <option value="">Wybierz pakiet</option>
           {budgetOptions.map((option) => (
             <option key={option} value={option}>
               {option}

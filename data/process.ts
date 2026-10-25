@@ -15,7 +15,7 @@ export const processSteps: ProcessStep[] = [
     step: "02",
     title: "Projekt i makieta",
     description:
-      "Pokazuję układ strony i kierunek wizualny, zanim powstanie kod. Poprawki na tym etapie są najtańsze.",
+      "Projekt pierwszego ekranu Twojej strony robię za darmo, zanim cokolwiek zapłacisz. Nie podoba się — rozstajemy się bez kosztów.",
   },
   {
     step: "03",

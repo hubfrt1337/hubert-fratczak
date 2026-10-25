@@ -3,7 +3,7 @@ import { Reveal } from "./ui/Reveal";
 import { SectionHeading } from "./ui/SectionHeading";
 import { CheckIcon } from "./ui/Icons";
 import { BudgetCta } from "./BudgetCta";
-import { carePlan, plans, pricingNote } from "@/data/pricing";
+import { carePlan, plans, pricingNote, subscriptionTerms } from "@/data/pricing";
 
 export function Pricing() {
   return (
@@ -11,11 +11,24 @@ export function Pricing() {
       <Container>
         <SectionHeading
           eyebrow="Cennik"
-          title="Orientacyjne widełki, bez ukrytych kosztów"
-          description="Ostateczną cenę podaję po krótkiej rozmowie — zależy od liczby podstron, integracji i tego, czy masz gotowe treści. Nie doliczam VAT — cena z cennika jest ceną końcową."
+          title="Strona w abonamencie, 0 zł na start"
+          description="Zamiast płacić za stronę z góry, płacisz stałą kwotę co miesiąc — hosting i opieka są w cenie. Nie doliczam VAT — cena z cennika jest ceną końcową."
         />
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        {subscriptionTerms.length > 0 ? (
+          <Reveal>
+            <ul className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-3">
+              {subscriptionTerms.map((term) => (
+                <li key={term} className="flex items-center gap-2 text-sm font-medium text-ink-800">
+                  <CheckIcon className="h-4 w-4 shrink-0 text-accent-600" />
+                  <span>{term}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        ) : null}
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {plans.map((plan, index) => (
             <Reveal key={plan.name} delay={index * 0.07}>
               <article
@@ -39,14 +52,14 @@ export function Pricing() {
                 </p>
 
                 <p className="mt-6 flex items-baseline gap-1.5">
-                  <span className="text-sm text-ink-500">od</span>
                   <span className="font-display text-3xl font-bold text-ink-950">
                     {plan.price}
                   </span>
-                  <span className="text-sm text-ink-500">zł</span>
+                  <span className="text-sm text-ink-500">zł / mies.</span>
                 </p>
                 <p className="mt-2 text-sm text-ink-500">
-                  Realizacja: <span className="text-ink-800">{plan.time}</span>
+                  Na start: <span className="text-ink-800">0 zł</span> · Realizacja:{" "}
+                  <span className="text-ink-800">{plan.time}</span>
                 </p>
 
                 <ul className="mt-6 flex-1 space-y-3 border-t border-ink-100 pt-6">
