@@ -27,7 +27,7 @@ export const faq: FaqItem[] = [
   {
     question: "Jak działa abonament?",
     answer:
-      "Nie płacisz nic na start. Stronę robię w ramach abonamentu: 69 zł miesięcznie za wizytówkę, 139 zł za stronę firmową, 219 zł za sklep. W cenie jest hosting, kopie zapasowe, aktualizacje, poprawki błędów i 1–2 godziny zmian co miesiąc (zależnie od pakietu). Umowa jest na 12 miesięcy.",
+      "Nie płacisz nic na start. Stronę robię w ramach abonamentu: 129 zł miesięcznie za wizytówkę, 229 zł za stronę firmową, 397 zł za sklep. W cenie jest hosting, kopie zapasowe, aktualizacje, poprawki błędów i 1–2 godziny zmian co miesiąc (zależnie od pakietu). Umowa jest na 12 miesięcy.",
   },
   {
     question: "Czyja jest strona po 12 miesiącach?",

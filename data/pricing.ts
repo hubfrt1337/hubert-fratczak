@@ -26,7 +26,7 @@ export const subscriptionTerms: string[] = [
 export const plans: Plan[] = [
   {
     name: "Wizytówka",
-    price: "69",
+    price: "129",
     time: "1–3 dni",
     tagline: "Dla firm, które potrzebują być w sieci i wyglądać poważnie.",
     features: [
@@ -37,11 +37,11 @@ export const plans: Plan[] = [
       "Hosting, wdrożenie i podpięcie domeny",
       "1 h zmian miesięcznie: teksty, zdjęcia, drobne poprawki",
     ],
-    budgetHint: "Wizytówka — 69 zł / mies.",
+    budgetHint: "Wizytówka — 129 zł / mies.",
   },
   {
     name: "Standard",
-    price: "139",
+    price: "229",
     time: "od 7 dni",
     tagline: "Rozbudowana strona firmowa z podstronami i blogiem.",
     features: [
@@ -54,11 +54,11 @@ export const plans: Plan[] = [
       "2 h zmian miesięcznie: teksty, zdjęcia, drobne poprawki",
     ],
     highlighted: true,
-    budgetHint: "Standard — 139 zł / mies.",
+    budgetHint: "Standard — 229 zł / mies.",
   },
   {
     name: "Sklep i integracje",
-    price: "219",
+    price: "397",
     time: "od 2 tygodni",
     tagline: "Sprzedaż online: płatności, wysyłki i systemy sprzedażowe.",
     features: [
@@ -70,7 +70,7 @@ export const plans: Plan[] = [
       "Hosting, kopie zapasowe i aktualizacje",
       "2 h zmian miesięcznie: produkty, zdjęcia, drobne poprawki",
     ],
-    budgetHint: "Sklep i integracje — 219 zł / mies.",
+    budgetHint: "Sklep i integracje — 397 zł / mies.",
   },
 ];
 
