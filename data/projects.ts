@@ -64,6 +64,16 @@ export const projects: Project[] = [
     href: "https://cerise-nail-studio.pages.dev",
   },
   {
+    name: "Tapicernia Pod Kasztanem",
+    category: "Zakład usługowy · SEO lokalne",
+    image: "/portfolio/projekt-7.png",
+    imageAlt: "Strona główna zakładu tapicerskiego Tapicernia Pod Kasztanem z Poznania",
+    summary:
+      "Strona zakładu tapicerskiego z Poznania pisana pod lokalne wyszukiwania: opisy usług przy zdjęciach, cennik orientacyjny, dzielnice i okolice, pytania klientów, formularz ze zdjęciami mebla i mapa dojazdu.",
+    tags: ["SEO lokalne", "Dane strukturalne", "Mobile first"],
+    href: "https://tapicernia-pod-kasztanem.hubert-fratczak.workers.dev",
+  },
+  {
     name: "Daria Ziętek",
     category: "Portfolio · marka osobista",
     image: "/portfolio/projekt-2.png",

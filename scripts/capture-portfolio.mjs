@@ -127,6 +127,11 @@ const localTargets = [
     dir: "D:/projekty/paznokcie",
     viewport: { width: 1600, height: 900 },
   },
+  {
+    file: "projekt-7.png",
+    url: "https://tapicernia-pod-kasztanem.hubert-fratczak.workers.dev/",
+    viewport: { width: 1600, height: 900 },
+  },
 ];
 targets.push(...localTargets);
 
