@@ -39,7 +39,7 @@ w VS Code wyszukaj `\[[A-Z_0-9]+\]` z włączonym regexem.
 | --- | --- | --- |
 | [`data/site.ts`](data/site.ts) | imię, e-mail, telefon, miasto, social media, menu | uzupełnione; `city` i `social` są puste — po wpisaniu wartości same pojawią się w stopce |
 | [`data/projects.ts`](data/projects.ts) | projekty w karuzeli pod hero (realizacje, projekt własny, projekty koncepcyjne) | uzupełnione |
-| [`data/pricing.ts`](data/pricing.ts) | 3 pakiety abonamentowe (cena/mies., terminy), warunki nad kartami, pakiety w formularzu, notka pod cennikiem | uzupełnione |
+| [`data/pricing.ts`](data/pricing.ts) | 3 pakiety z płatnością jednorazową (cena, terminy; abonament w historii — 343eb24), warunki nad kartami, pakiety w formularzu, notka pod cennikiem | uzupełnione |
 | [`data/testimonials.ts`](data/testimonials.ts) | opinie klientów | pusta tablica = sekcja się nie wyświetla |
 | [`data/services.ts`](data/services.ts) | 3 karty oferty | — |
 | [`data/process.ts`](data/process.ts) | 4 kroki procesu | — |

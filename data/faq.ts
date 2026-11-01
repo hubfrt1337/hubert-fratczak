@@ -12,31 +12,31 @@ export const faq: FaqItem[] = [
   {
     question: "Czy mogę sam edytować treści po wdrożeniu?",
     answer:
-      "Tak. W pakietach Standard i Sklep dostajesz panel, w którym zmienisz teksty, zdjęcia, ceny czy wpisy na blogu bez znajomości kodu. Po wdrożeniu pokazuję na żywo, jak z niego korzystać, i zostawiam krótką instrukcję.",
+      "Tak. W pakietach Strona firmowa i Sklep dostajesz panel, w którym zmienisz teksty, zdjęcia, ceny czy wpisy na blogu bez znajomości kodu. Po wdrożeniu pokazuję na żywo, jak z niego korzystać, i zostawiam krótką instrukcję.",
   },
   {
     question: "Co z domeną i hostingiem?",
     answer:
-      "Hosting jest w cenie abonamentu — nie płacisz za niego osobno. Domenę mogę kupić i skonfigurować za Ciebie albo podpiąć się pod tę, którą już masz. Rejestruję ją zawsze na Twoje dane, więc adres strony jest Twoją własnością od pierwszego dnia.",
+      "Hosting na pierwszy rok jest w cenie pakietu. Potem możesz zostać u mnie albo przenieść stronę do dowolnego dostawcy — koszt dalszego hostingu podaję z góry. Domenę mogę kupić i skonfigurować za Ciebie albo podpiąć się pod tę, którą już masz. Rejestruję ją zawsze na Twoje dane, więc adres strony jest Twoją własnością od pierwszego dnia.",
   },
   {
     question: "Czy jest gwarancja na poprawki?",
     answer:
-      "Tak. Przez cały okres abonamentu poprawiam błędy techniczne bez dodatkowych opłat, pilnuję kopii zapasowych i aktualizacji. Do tego co miesiąc masz w cenie 1 godzinę zmian w wizytówce i 2 godziny w stronie firmowej i sklepie: podmiana tekstów i zdjęć, nowy wpis, drobne poprawki wyglądu. Większe zmiany, np. nowa podstrona czy funkcja, wyceniam osobno — zawsze przed rozpoczęciem pracy.",
+      "Tak. Po wdrożeniu poprawiam bez dodatkowych opłat błędy i drobne rzeczy, które wyjdą w praktyce: 30 dni przy wizytówce, 60 dni przy stronie firmowej, 90 dni przy sklepie. Późniejsze zmiany, np. nowa podstrona czy funkcja, wyceniam osobno — zawsze przed rozpoczęciem pracy.",
   },
   {
-    question: "Jak działa abonament?",
+    question: "Czy muszę płacić abonament?",
     answer:
-      "Nie płacisz nic na start. Stronę robię w ramach abonamentu: 129 zł miesięcznie za wizytówkę, 229 zł za stronę firmową, 397 zł za sklep. W cenie jest hosting, kopie zapasowe, aktualizacje, poprawki błędów i 1–2 godziny zmian co miesiąc (zależnie od pakietu). Umowa jest na 12 miesięcy.",
+      "Nie. Płacisz raz: 1 490 zł za wizytówkę, 2 950 zł za stronę firmową, od 5 000 zł za sklep. W cenie jest projekt, wykonanie, wdrożenie, hosting na pierwszy rok i okres bezpłatnych poprawek. Żadnych miesięcznych opłat ani umowy na czas określony.",
   },
   {
-    question: "Czyja jest strona po 12 miesiącach?",
+    question: "Czyja jest strona po realizacji?",
     answer:
-      "Twoja. Po 12 miesiącach przenoszę na Ciebie pełne majątkowe prawa autorskie do strony — możesz ją zabrać do innego wykonawcy albo zostać u mnie w abonamencie.",
+      "Twoja. Po zapłacie przenoszę na Ciebie pełne majątkowe prawa autorskie do strony — możesz ją zabrać do innego wykonawcy albo dalej rozwijać ze mną.",
   },
   {
     question: "Jak wygląda płatność?",
     answer:
-      "Płacisz stałą kwotę co miesiąc, bez zaliczki. Rozliczam się przelewem i wystawiam rachunek. Nie doliczam VAT, więc kwota z cennika jest kwotą końcową.",
+      "50% kwoty płacisz na start, resztę po odbiorze gotowej strony. Rozliczam się przelewem i wystawiam rachunek. Nie doliczam VAT, więc kwota z cennika jest kwotą końcową.",
   },
 ];
