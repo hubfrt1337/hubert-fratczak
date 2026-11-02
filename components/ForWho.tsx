@@ -11,7 +11,7 @@ const groups = [
   {
     title: "Jednoosobowe działalności",
     description:
-      "Fotografowie, trenerzy, księgowi, prawnicy — wszyscy, dla których strona jest pierwszym wrażeniem i sposobem na uwiarygodnienie oferty.",
+      "Fotografowie, trenerzy, księgowi, prawnicy: wszyscy, dla których strona jest pierwszym wrażeniem i sposobem na uwiarygodnienie oferty.",
   },
   {
     title: "Gabinety i praktyki",

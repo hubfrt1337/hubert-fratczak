@@ -31,7 +31,7 @@ export function Testimonials() {
                   {testimonial.photo ? (
                     <Image
                       src={testimonial.photo}
-                      alt={`${testimonial.name} — zdjęcie`}
+                      alt={`${testimonial.name}, zdjęcie`}
                       width={44}
                       height={44}
                       className="h-11 w-11 rounded-full object-cover"

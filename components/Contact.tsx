@@ -13,11 +13,11 @@ export function Contact() {
             <Reveal>
               <p className="eyebrow text-accent-300">Kontakt</p>
               <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
-                Opisz projekt — odeślę wycenę w 24 godziny
+                Opisz projekt, odeślę wycenę w 24 godziny
               </h2>
               <p className="mt-4 text-base leading-relaxed text-ink-300">
                 Nie musisz mieć gotowej specyfikacji. Wystarczy, że napiszesz, czym
-                zajmuje się Twoja firma i co strona ma dla Ciebie robić — resztę
+                zajmuje się Twoja firma i co strona ma dla Ciebie robić. Resztę
                 ustalimy w rozmowie. Wycena jest bezpłatna i niezobowiązująca.
               </p>
             </Reveal>

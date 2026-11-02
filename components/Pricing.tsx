@@ -12,7 +12,7 @@ export function Pricing() {
         <SectionHeading
           eyebrow="Cennik"
           title="Płacisz raz, strona jest Twoja"
-          description="Jedna kwota za projekt, wykonanie i wdrożenie — bez miesięcznych opłat. Nie doliczam VAT — cena z cennika jest ceną końcową."
+          description="Jedna kwota za projekt, wykonanie i wdrożenie, bez miesięcznych opłat. Nie doliczam VAT, więc cena z cennika jest ceną końcową."
         />
 
         {pricingTerms.length > 0 ? (

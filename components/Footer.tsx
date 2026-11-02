@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Container } from "./ui/Container";
 import { nav, site } from "@/data/site";
+import { industries } from "@/data/branze";
+import { projects } from "@/data/projects";
 
 const socialLabels: Record<string, string> = {
   linkedin: "LinkedIn",
@@ -15,7 +17,7 @@ export function Footer() {
   return (
     <footer className="border-t border-ink-100 bg-white py-12">
       <Container>
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <p className="font-display text-lg font-bold text-ink-950">
               {site.name}
@@ -25,6 +27,29 @@ export function Footer() {
               {site.role} dla małych i średnich firm. Projekt, kod i wdrożenie
               w jednych rękach.
             </p>
+          </div>
+
+          <div>
+            <h2 className="text-sm font-semibold text-ink-950">Dla branż</h2>
+            <ul className="mt-3 space-y-2 text-sm text-ink-600">
+              {industries.map((industry) => (
+                <li key={industry.id}>
+                  <Link href={`/${industry.path}`} className="hover:text-accent-700">
+                    {industry.shortName}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h2 className="mt-6 text-sm font-semibold text-ink-950">Realizacje</h2>
+            <ul className="mt-3 space-y-2 text-sm text-ink-600">
+              {projects.map((project) => (
+                <li key={project.slug}>
+                  <Link href={`/realizacje/${project.slug}`} className="hover:text-accent-700">
+                    {project.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div>

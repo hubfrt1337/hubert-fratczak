@@ -2,12 +2,19 @@ import { Container } from "./ui/Container";
 import { Reveal } from "./ui/Reveal";
 import { SectionHeading } from "./ui/SectionHeading";
 import { ChevronIcon } from "./ui/Icons";
-import { faq } from "@/data/faq";
+import { faq, type FaqItem } from "@/data/faq";
 
 /**
  * Akordeon na natywnych <details>/<summary> — dostępny z klawiatury i zerowy koszt JS.
+ * Podstrony branżowe podają własne pytania; bez propsów leci ogólne FAQ ze strony głównej.
  */
-export function Faq() {
+export function Faq({
+  items = faq,
+  title = "Pytania, które słyszę najczęściej",
+}: {
+  items?: FaqItem[];
+  title?: string;
+} = {}) {
   return (
     <section
       id="faq"
@@ -18,14 +25,14 @@ export function Faq() {
           <div className="lg:col-span-4">
             <SectionHeading
               eyebrow="FAQ"
-              title="Pytania, które słyszę najczęściej"
-              description="Nie ma tu Twojego pytania? Napisz — odpowiadam w ciągu 24 godzin."
+              title={title}
+              description="Nie ma tu Twojego pytania? Napisz, odpowiadam w ciągu 24 godzin."
             />
           </div>
 
           <div className="lg:col-span-8">
             <div className="divide-y divide-ink-200 border-y border-ink-200">
-              {faq.map((item, index) => (
+              {items.map((item, index) => (
                 <Reveal key={item.question} delay={index * 0.04}>
                   <details className="group py-2">
                     <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-left">

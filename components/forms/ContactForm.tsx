@@ -166,7 +166,7 @@ export function ContactForm() {
       <FormStatus
         status={status}
         error={error}
-        successMessage="Dziękuję! Wiadomość dotarła — odezwę się w ciągu 24 godzin."
+        successMessage="Dziękuję! Wiadomość dotarła, odezwę się w ciągu 24 godzin."
       />
 
       <button

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
 import { site } from "@/data/site";
+import { businessJsonLd } from "@/data/jsonLd";
 import "./globals.css";
 
 const sora = Sora({
@@ -16,23 +17,23 @@ const inter = Inter({
   display: "swap",
 });
 
-const title = `${site.name} — strony internetowe dla firm`;
+const title = `Tworzenie stron internetowych Poznań | ${site.name}`;
 const description =
-  "Projektuję i wdrażam strony internetowe, które przynoszą klientów: wizytówki, sklepy z integracjami i większe serwisy. Konkretna wycena, stały kontakt, wsparcie po wdrożeniu.";
+  "Tworzę strony internetowe dla firm z Poznania i całej Polski: wizytówki od 1 490 zł, strony firmowe i sklepy. Płacisz raz, bez abonamentu i bez doliczania VAT. Wycena w 24 godziny.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default: title,
-    template: `%s — ${site.name}`,
+    template: `%s | ${site.name}`,
   },
   description,
   keywords: [
-    "strony internetowe",
-    "tworzenie stron www",
-    "freelancer",
-    "sklep internetowy",
+    "tworzenie stron internetowych Poznań",
+    "strony internetowe Poznań",
+    "strona wizytówka",
     "strona dla firmy",
+    "sklep internetowy",
   ],
   authors: [{ name: site.name }],
   alternates: { canonical: "/" },
@@ -64,7 +65,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pl" className={`${sora.variable} ${inter.variable}`}>
-      <body>{children}</body>
+      <body>
+        {/* Dane firmy dla Google: kto, gdzie, za ile. Bez telefonu, bo numer celowo nie trafia do HTML-a (patrz CallReveal). */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

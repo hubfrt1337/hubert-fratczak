@@ -2,7 +2,9 @@ import { Container } from "./ui/Container";
 import { Reveal } from "./ui/Reveal";
 import { SectionHeading } from "./ui/SectionHeading";
 import { CheckIcon } from "./ui/Icons";
+import Link from "next/link";
 import { services } from "@/data/services";
+import { industries } from "@/data/branze";
 
 export function Services() {
   return (
@@ -11,7 +13,7 @@ export function Services() {
         <SectionHeading
           eyebrow="Oferta"
           title="Trzy rodzaje projektów, które realizuję"
-          description="Zakres dobieramy do celu i budżetu — nie odwrotnie. Jeśli nie wiesz, w którą kategorię wpada Twój pomysł, po prostu napisz."
+          description="Zakres dobieramy do celu i budżetu, nie odwrotnie. Jeśli nie wiesz, w którą kategorię wpada Twój pomysł, po prostu napisz."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
@@ -37,6 +39,22 @@ export function Services() {
             </Reveal>
           ))}
         </div>
+
+        <p className="mt-10 text-sm text-ink-600">
+          Robisz w konkretnej branży? Zobacz, jak wygląda dobra strona:{" "}
+          {industries.map((industry, index) => (
+            <span key={industry.id}>
+              {index > 0 ? " oraz " : null}
+              <Link
+                href={`/${industry.path}`}
+                className="font-semibold text-accent-700 underline underline-offset-2 hover:text-accent-800"
+              >
+                {industry.shortName.toLowerCase()}
+              </Link>
+            </span>
+          ))}
+          .
+        </p>
       </Container>
     </section>
   );

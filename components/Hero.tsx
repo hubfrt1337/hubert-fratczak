@@ -30,8 +30,8 @@ export function Hero() {
 
             <Reveal delay={0.05}>
               <h1 className="mt-6 text-4xl leading-[1.1] font-bold sm:text-5xl lg:text-6xl">
-                Strona dla Twojej firmy{" "}
-                <span className="text-accent-600">— płacisz raz i jest Twoja</span>
+                Tworzenie stron internetowych w Poznaniu.{" "}
+                <span className="text-accent-600">Płacisz raz i strona jest Twoja</span>
               </h1>
             </Reveal>
 
@@ -39,7 +39,8 @@ export function Hero() {
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-600">
                 Projekt, wykonanie i wdrożenie w jednej cenie, od {lowestPrice} zł.
                 Hosting na pierwszy rok w cenie, a po zapłacie pełne prawa do strony
-                przechodzą na Ciebie — żadnych miesięcznych opłat.
+                przechodzą na Ciebie. Żadnych miesięcznych opłat. Pracuję z firmami
+                z Poznania i okolic, a zdalnie z całej Polski.
               </p>
             </Reveal>
 

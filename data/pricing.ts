@@ -19,7 +19,7 @@ export type Plan = {
  * Abonament (0 zł na start, 129 / 229 / 397 zł mies.) jest w historii gita — commit 343eb24.
  */
 export const pricingTerms: string[] = [
-  "Płacisz raz — bez abonamentu",
+  "Płacisz raz, bez abonamentu",
   "50% na start, reszta po odbiorze",
   "Pełne prawa do strony po zapłacie",
   "Hosting na 12 miesięcy w cenie",
@@ -41,7 +41,7 @@ export const plans: Plan[] = [
       "Hosting i SSL na 12 miesięcy, podpięcie domeny",
       "30 dni poprawek po wdrożeniu",
     ],
-    budgetHint: "Wizytówka — 1 490 zł",
+    budgetHint: "Wizytówka: 1 490 zł",
   },
   {
     name: "Strona firmowa",
@@ -59,7 +59,7 @@ export const plans: Plan[] = [
       "60 dni poprawek po wdrożeniu",
     ],
     highlighted: true,
-    budgetHint: "Strona firmowa — 2 950 zł",
+    budgetHint: "Strona firmowa: 2 950 zł",
   },
   {
     name: "Sklep i integracje",
@@ -76,7 +76,7 @@ export const plans: Plan[] = [
       "Hosting i SSL na 12 miesięcy, kopie zapasowe",
       "90 dni poprawek po wdrożeniu",
     ],
-    budgetHint: "Sklep i integracje — od 5 000 zł",
+    budgetHint: "Sklep i integracje: od 5 000 zł",
   },
 ];
 
@@ -112,7 +112,7 @@ export const carePlan: CarePlan | null = null;
  * Poniżej wersja bez promocji — wyjaśnienie, co jest w cenie, a co nie.
  */
 export const pricingNote =
-  "Cena pakietu jest stała dla podanego zakresu. Dodatkowe podstrony, wersje językowe czy integracje wyceniam przed startem — po krótkiej rozmowie, bezpłatnie i bez zobowiązań.";
+  "Cena pakietu jest stała dla podanego zakresu. Dodatkowe podstrony, wersje językowe czy integracje wyceniam przed startem, po krótkiej rozmowie, bezpłatnie i bez zobowiązań.";
 
 /** Pakiety do wyboru w formularzu kontaktowym. */
 export const budgetOptions = [

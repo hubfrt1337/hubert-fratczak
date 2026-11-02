@@ -13,7 +13,7 @@ export function About() {
             <div className="relative mx-auto max-w-sm lg:max-w-none">
               <Image
                 src="/authorHubert.png"
-                alt={`${site.name} — zdjęcie portretowe`}
+                alt={`${site.name}, zdjęcie portretowe`}
                 width={800}
                 height={800}
                 sizes="(max-width: 1024px) 90vw, 420px"
@@ -26,7 +26,7 @@ export function About() {
             <Reveal>
               <p className="eyebrow">O mnie</p>
               <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-                {site.name} — strony, aplikacje i marketing internetowy
+                {site.name}: strony, aplikacje i marketing internetowy z Poznania
               </h2>
             </Reveal>
 
@@ -35,7 +35,7 @@ export function About() {
                 <p>
                   Projektuję i buduję strony firmowe, sklepy oraz aplikacje webowe
                   w Next.js, React i TypeScript. Odpowiadam za cały proces: projekt
-                  graficzny, kod, wdrożenie, domenę i hosting — a potem za to, żeby
+                  graficzny, kod, wdrożenie, domenę i hosting, a potem za to, żeby
                   strona przyprowadzała klientów.
                 </p>
                 <p>
@@ -72,7 +72,7 @@ export function About() {
                   },
                   {
                     label: "Analityka",
-                    text: "GA4 i Tag Manager — pomiar formularzy, telefonów i zakupów.",
+                    text: "GA4 i Tag Manager: pomiar formularzy, telefonów i zakupów.",
                   },
                 ].map((item) => (
                   <li

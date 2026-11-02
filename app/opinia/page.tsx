@@ -30,7 +30,7 @@ export default function OpinionPage() {
           <p className="mt-4 text-base leading-relaxed text-ink-600">
             Kilka zdań od Ciebie pomaga kolejnym firmom zdecydować, komu zaufać.
             Zajmie to dwie minuty. Opinię opublikuję na stronie dopiero po Twojej
-            zgodzie — a jeśli chcesz coś w niej poprawić, po prostu napisz do mnie
+            zgodzie. A jeśli chcesz coś w niej poprawić, po prostu napisz do mnie
             na {site.email}.
           </p>
 

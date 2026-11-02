@@ -23,7 +23,7 @@ export function CallReveal() {
     <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6">
       <h3 className="text-lg font-semibold text-white">Wolisz porozmawiać?</h3>
       <p className="mt-2 text-sm leading-relaxed text-ink-300">
-        Zadzwoń — w kilkanaście minut ustalimy, czego potrzebujesz, a Ty od razu
+        Zadzwoń. W kilkanaście minut ustalimy, czego potrzebujesz, a Ty od razu
         dowiesz się, ile to mniej więcej kosztuje i kiedy strona może być gotowa.
       </p>
 

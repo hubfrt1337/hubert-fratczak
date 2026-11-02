@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Container } from "./ui/Container";
 import { Reveal } from "./ui/Reveal";
@@ -81,7 +82,7 @@ export function Portfolio() {
           <SectionHeading
             eyebrow="Portfolio"
             title="Wybrane projekty"
-            description="Strony firmowe, serwisy i aplikacje webowe — od projektu graficznego, przez kod, po SEO, analitykę i kampanie."
+            description="Strony firmowe, serwisy i aplikacje webowe: od projektu graficznego, przez kod, po SEO, analitykę i kampanie."
           />
           <div className="flex shrink-0 gap-2">
             <button
@@ -155,16 +156,25 @@ export function Portfolio() {
                     ))}
                   </ul>
 
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-accent-700 hover:text-accent-800"
-                  >
-                    Zobacz stronę
-                    <ArrowIcon />
-                    <span className="sr-only">(otwiera się w nowej karcie)</span>
-                  </a>
+                  <div className="mt-auto flex flex-wrap gap-x-5 gap-y-2 pt-5 text-sm font-semibold">
+                    <Link
+                      href={`/realizacje/${project.slug}`}
+                      className="inline-flex items-center gap-2 text-accent-700 hover:text-accent-800"
+                    >
+                      Opis projektu
+                      <ArrowIcon />
+                      <span className="sr-only">: {project.name}</span>
+                    </Link>
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-ink-600 hover:text-ink-950"
+                    >
+                      Zobacz stronę
+                      <span className="sr-only"> {project.name} (otwiera się w nowej karcie)</span>
+                    </a>
+                  </div>
                 </div>
               </article>
             ))}

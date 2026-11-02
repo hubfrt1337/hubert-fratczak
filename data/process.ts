@@ -9,13 +9,13 @@ export const processSteps: ProcessStep[] = [
     step: "01",
     title: "Rozmowa i briefing",
     description:
-      "Ustalamy cel strony, budżet i termin. Bez zobowiązań — po tej rozmowie wiesz, ile to potrwa i ile będzie kosztowało.",
+      "Ustalamy cel strony, budżet i termin. Bez zobowiązań: po tej rozmowie wiesz, ile to potrwa i ile będzie kosztowało.",
   },
   {
     step: "02",
     title: "Projekt i makieta",
     description:
-      "Projekt pierwszego ekranu Twojej strony robię za darmo, zanim cokolwiek zapłacisz. Nie podoba się — rozstajemy się bez kosztów.",
+      "Projekt pierwszego ekranu Twojej strony robię za darmo, zanim cokolwiek zapłacisz. Nie podoba się? Rozstajemy się bez kosztów.",
   },
   {
     step: "03",

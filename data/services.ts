@@ -34,7 +34,7 @@ export const services: Service[] = [
     id: "wieksze-projekty",
     title: "Większe projekty",
     description:
-      "Rozbudowane serwisy pod indywidualne potrzeby — kiedy gotowe szablony przestają wystarczać.",
+      "Rozbudowane serwisy pod indywidualne potrzeby, kiedy gotowe szablony przestają wystarczać.",
     points: [
       "Panele, kalkulatory, systemy rezerwacji",
       "Blog i strefa dla klientów",

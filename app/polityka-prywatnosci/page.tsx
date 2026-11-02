@@ -50,24 +50,24 @@ export default function PrivacyPolicyPage() {
               </h2>
               <ul className="mt-3 list-disc space-y-2 pl-5">
                 <li>
-                  <strong>Formularz kontaktowy</strong> — imię, adres e-mail,
+                  <strong>Formularz kontaktowy:</strong> imię, adres e-mail,
                   numer telefonu (jeśli go podasz), orientacyjny budżet i treść wiadomości. Cel: odpowiedź na
                   zapytanie i przygotowanie oferty (art. 6 ust. 1 lit. b i f
                   RODO).
                 </li>
                 <li>
-                  <strong>Kontakt e-mailowy i telefoniczny</strong> — dane, które
+                  <strong>Kontakt e-mailowy i telefoniczny:</strong> dane, które
                   sam przekażesz: imię, adres e-mail, numer telefonu i treść
                   rozmowy lub wiadomości. Cel: odpowiedź na zapytanie i
                   przygotowanie oferty (art. 6 ust. 1 lit. b i f RODO).
                 </li>
                 <li>
-                  <strong>Formularz opinii</strong> — imię, nazwa firmy, treść
+                  <strong>Formularz opinii:</strong> imię, nazwa firmy, treść
                   opinii oraz zgoda na publikację. Cel: publikacja referencji na
-                  stronie (art. 6 ust. 1 lit. a RODO — zgoda).
+                  stronie (art. 6 ust. 1 lit. a RODO, zgoda).
                 </li>
                 <li>
-                  <strong>Dane techniczne</strong> — adres IP i informacje o
+                  <strong>Dane techniczne:</strong> adres IP i informacje o
                   przeglądarce zapisywane automatycznie przez dostawcę hostingu w
                   logach serwera. Cel: bezpieczeństwo i diagnostyka.
                 </li>
@@ -81,7 +81,7 @@ export default function PrivacyPolicyPage() {
                 działania strony: dostawcy hostingu (Vercel Inc.), dostawcy obsługi
                 formularzy (Web3Forms) oraz dostawcy poczty e-mail (Zoho
                 Corporation B.V., serwery w Unii Europejskiej). Część z nich może
-                przetwarzać dane poza Europejskim Obszarem Gospodarczym — odbywa
+                przetwarzać dane poza Europejskim Obszarem Gospodarczym. Odbywa
                 się to wyłącznie na podstawie mechanizmów przewidzianych w RODO,
                 takich jak standardowe klauzule umowne zatwierdzone przez Komisję
                 Europejską lub decyzja stwierdzająca odpowiedni stopień ochrony.
@@ -95,8 +95,8 @@ export default function PrivacyPolicyPage() {
               </h2>
               <p className="mt-3">
                 Korespondencję z zapytań przechowuję przez 24 miesiące od
-                ostatniego kontaktu, a jeśli dojdzie do współpracy — przez czas
-                jej trwania i do upływu okresu przedawnienia roszczeń. Opinie publikowane na stronie —
+                ostatniego kontaktu, a jeśli dojdzie do współpracy, przez czas
+                jej trwania i do upływu okresu przedawnienia roszczeń. Opinie publikowane na stronie przechowuję
                 do czasu wycofania zgody. Dokumentację rozliczeniową przez okres
                 wymagany przepisami podatkowymi (5 lat).
               </p>
@@ -108,7 +108,7 @@ export default function PrivacyPolicyPage() {
                 Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia,
                 ograniczenia przetwarzania, przenoszenia oraz wniesienia
                 sprzeciwu. Zgodę na publikację opinii możesz wycofać w każdej
-                chwili — wystarczy wiadomość na {site.email}, opinia zostanie
+                chwili. Wystarczy wiadomość na {site.email}, opinia zostanie
                 usunięta ze strony. Przysługuje Ci też skarga do Prezesa Urzędu
                 Ochrony Danych Osobowych.
               </p>
