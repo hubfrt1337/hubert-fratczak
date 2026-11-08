@@ -13,26 +13,26 @@ import sharp from "sharp";
 
 const publicDir = path.join(process.cwd(), "public");
 
+const TEAL = "#0f6e69"; // morski marki
 const SUN = "#ff8f4d"; // pomarańcz marki (CTA)
-const INK = "#052424"; // ciemny morski
 
-const glyph = `<g transform="translate(12 12) scale(1.6667)" fill="none" stroke="${INK}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-      <path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 5l-3 14"/>
-    </g>`;
+/** Znak: biała litera w i pomarańczowa kropka (jak „.pl” w logo). Ten sam co components/ui/Logo.tsx. */
+const glyph = `<path d="M14 22 L21 44 L28 28 L35 44 L42 22" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="51" cy="41" r="5" fill="${SUN}"/>`;
 
-/** Favicon: pomarańczowy „liść” (duże zaokrąglenie lewy górny i prawy dolny róg, małe pozostałe). */
+/** Favicon: morski „liść” (duże zaokrąglenie lewy górny i prawy dolny róg, małe pozostałe). */
 function icon(size) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 64 64">
-    <path d="M22 0H58A6 6 0 0 1 64 6V42A22 22 0 0 1 42 64H6A6 6 0 0 1 0 58V22A22 22 0 0 1 22 0Z" fill="${SUN}"/>
+    <path d="M22 0H58A6 6 0 0 1 64 6V42A22 22 0 0 1 42 64H6A6 6 0 0 1 0 58V22A22 22 0 0 1 22 0Z" fill="${TEAL}"/>
     ${glyph}
   </svg>`;
 }
 
-/** Ikona iOS: pełne tło (iOS sam zaokrągla rogi), ten sam znak. */
+/** Ikona iOS: pełne tło (iOS sam zaokrągla rogi), znak lekko pomniejszony, żeby nie dotykał krawędzi. */
 function appleIcon(size) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 64 64">
-    <rect width="64" height="64" fill="${SUN}"/>
-    ${glyph}
+    <rect width="64" height="64" fill="${TEAL}"/>
+    <g transform="translate(6.4 6.4) scale(0.8)">${glyph}</g>
   </svg>`;
 }
 
