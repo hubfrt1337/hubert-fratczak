@@ -12,17 +12,17 @@ export const faq: FaqItem[] = [
   {
     question: "Czy mogę sam edytować treści po wdrożeniu?",
     answer:
-      "Tak. W pakietach Strona firmowa i Sklep dostajesz panel, w którym zmienisz teksty, zdjęcia, ceny czy wpisy na blogu bez znajomości kodu. Po wdrożeniu pokazuję na żywo, jak z niego korzystać, i zostawiam krótką instrukcję.",
+      "Tak. W pakietach Strona firmowa i Sklep dostajesz panel, w którym zmienisz teksty, zdjęcia, ceny czy wpisy na blogu bez znajomości kodu. Po wdrożeniu pokazujemy na żywo, jak z niego korzystać, i zostawiamy krótką instrukcję.",
   },
   {
     question: "Co z domeną i hostingiem?",
     answer:
-      "Hosting na pierwszy rok jest w cenie pakietu. Potem możesz zostać u mnie albo przenieść stronę do dowolnego dostawcy, a koszt dalszego hostingu podaję z góry. Domenę mogę kupić i skonfigurować za Ciebie albo podpiąć się pod tę, którą już masz. Rejestruję ją zawsze na Twoje dane, więc adres strony jest Twoją własnością od pierwszego dnia.",
+      "Hosting na pierwszy rok jest w cenie pakietu. Potem możesz zostać u nas albo przenieść stronę do dowolnego dostawcy, a koszt dalszego hostingu podajemy z góry. Domenę możemy kupić i skonfigurować za Ciebie albo podpiąć się pod tę, którą już masz. Rejestrujemy ją zawsze na Twoje dane, więc adres strony jest Twoją własnością od pierwszego dnia.",
   },
   {
     question: "Czy jest gwarancja na poprawki?",
     answer:
-      "Tak. Po wdrożeniu poprawiam bez dodatkowych opłat błędy i drobne rzeczy, które wyjdą w praktyce: 30 dni przy wizytówce, 60 dni przy stronie firmowej, 90 dni przy sklepie. Późniejsze zmiany, np. nowa podstrona czy funkcja, wyceniam osobno, zawsze przed rozpoczęciem pracy.",
+      "Tak. Po wdrożeniu poprawiamy bez dodatkowych opłat błędy i drobne rzeczy, które wyjdą w praktyce: 30 dni przy wizytówce, 60 dni przy stronie firmowej, 90 dni przy sklepie. Późniejsze zmiany, np. nowa podstrona czy funkcja, wyceniamy osobno, zawsze przed rozpoczęciem pracy.",
   },
   {
     question: "Czy muszę płacić abonament?",
@@ -32,11 +32,11 @@ export const faq: FaqItem[] = [
   {
     question: "Czyja jest strona po realizacji?",
     answer:
-      "Twoja. Po zapłacie przenoszę na Ciebie pełne majątkowe prawa autorskie do strony. Możesz ją zabrać do innego wykonawcy albo dalej rozwijać ze mną.",
+      "Twoja. Po zapłacie przenosimy na Ciebie pełne majątkowe prawa autorskie do strony. Możesz ją zabrać do innego wykonawcy albo dalej rozwijać z nami.",
   },
   {
     question: "Jak wygląda płatność?",
     answer:
-      "50% kwoty płacisz na start, resztę po odbiorze gotowej strony. Rozliczam się przelewem i wystawiam rachunek. Nie doliczam VAT, więc kwota z cennika jest kwotą końcową.",
+      "50% kwoty płacisz na start, resztę po odbiorze gotowej strony. Rozliczamy się przelewem, dostajesz rachunek. Nie doliczamy VAT, więc kwota z cennika jest kwotą końcową.",
   },
 ];

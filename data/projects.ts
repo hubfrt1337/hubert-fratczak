@@ -21,7 +21,7 @@ export type Project = {
   goal: string;
   /** Podstrona realizacji: co jest na stronie / w aplikacji. */
   features: string[];
-  /** Podstrona realizacji: jak to zrobiłem i dlaczego tak (1–2 akapity). */
+  /** Podstrona realizacji: jak to zrobiliśmy i dlaczego tak (1–2 akapity). */
   approach: string[];
   /** Podstrona branżowa, do której prowadzi „Chcesz podobną stronę?”. */
   industry?: "salony" | "warsztaty";
@@ -51,8 +51,8 @@ export const projects: Project[] = [
       "Cennik i czas zabiegów na stronie pobierane z panelu, więc zawsze aktualne",
     ],
     approach: [
-      "Gotowe systemy rezerwacji pobierają abonament albo prowizję i wyglądają tak samo w każdym salonie. Tutaj rezerwacja jest częścią strony salonu, w jego kolorach, a cały system napisałem od zera w Next.js z bazą Supabase.",
-      "Każdy ekran projektowałem najpierw na telefon, bo z telefonu korzystają i klientki, i stylistki. Zanim zmiana trafi do salonu, sprawdzam ją na osobnym salonie testowym i automatycznymi testami, żeby nie zgubić żadnej wizyty.",
+      "Gotowe systemy rezerwacji pobierają abonament albo prowizję i wyglądają tak samo w każdym salonie. Tutaj rezerwacja jest częścią strony salonu, w jego kolorach, a cały system napisaliśmy od zera w Next.js z bazą Supabase.",
+      "Każdy ekran projektowaliśmy najpierw na telefon, bo z telefonu korzystają i klientki, i stylistki. Zanim zmiana trafi do salonu, sprawdzamy ją na osobnym salonie testowym i automatycznymi testami, żeby nie zgubić żadnej wizyty.",
     ],
     industry: "salony",
   },
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "Stripe", "SEO", "Google Ads"],
     href: "https://www.stworzcv.com",
     goal:
-      "StwórzCV to moja własna aplikacja: kreator CV i listów motywacyjnych dla osób szukających pracy. Prowadzę ją sam, od kodu po marketing, więc to, co robię u klientów (SEO, reklamy, pomiar), najpierw sprawdzam na własnym biznesie i za własne pieniądze.",
+      "StwórzCV to nasz własny produkt: kreator CV i listów motywacyjnych dla osób szukających pracy. Prowadzimy go od kodu po marketing, więc to, co robimy u klientów (SEO, reklamy, pomiar), najpierw sprawdzamy na własnym biznesie i za własne pieniądze.",
     features: [
       "Kreator CV krok po kroku z szablonami czytelnymi dla systemów ATS",
       "Wgrywanie starego CV, dopasowanie CV do oferty pracy i tłumaczenie CV",
@@ -78,8 +78,8 @@ export const projects: Project[] = [
       "Wzory CV dla wielu zawodów i blog z poradnikami",
     ],
     approach: [
-      "Aplikacja działa na Next.js i Vercelu, dane trzyma w Supabase, a płatności obsługuje Stripe. Strony wzorów i poradników są pisane pod konkretne wyszukiwania w Google, a w Search Console regularnie sprawdzam, które z nich rosną, a które wypadają z indeksu.",
-      "Kampanie Google Ads rozliczam do realnej sprzedaży w Stripe, a nie do kliknięć. Dzięki temu wiem, które frazy przynoszą płacących klientów, a które tylko zjadają budżet. To samo podejście stosuję przy reklamach dla klientów.",
+      "Aplikacja działa na Next.js i Vercelu, dane trzyma w Supabase, a płatności obsługuje Stripe. Strony wzorów i poradników są pisane pod konkretne wyszukiwania w Google, a w Search Console regularnie sprawdzamy, które z nich rosną, a które wypadają z indeksu.",
+      "Kampanie Google Ads rozliczamy do realnej sprzedaży w Stripe, a nie do kliknięć. Dzięki temu wiemy, które frazy przynoszą płacących klientów, a które tylko zjadają budżet. To samo podejście stosujemy przy reklamach dla klientów.",
     ],
   },
   {
@@ -101,7 +101,7 @@ export const projects: Project[] = [
       "Typografia dobrana pod długie teksty, czytelna też na telefonie",
     ],
     approach: [
-      "Zacząłem od wyglądu tekstu, a nie od dekoracji: szerokość kolumny, wielkość liter i odstępy są ustawione tak, żeby długi artykuł czytało się bez męczenia oczu. Granat i złoto nawiązują do klasycznej, eleganckiej strony szachów.",
+      "Zaczęliśmy od wyglądu tekstu, a nie od dekoracji: szerokość kolumny, wielkość liter i odstępy są ustawione tak, żeby długi artykuł czytało się bez męczenia oczu. Granat i złoto nawiązują do klasycznej, eleganckiej strony szachów.",
     ],
   },
   {

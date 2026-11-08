@@ -1,45 +1,53 @@
-export type Service = {
-  id: string;
-  title: string;
-  description: string;
-  points: string[];
-};
+import type { IkonaNazwa } from "@/components/ui/Icons";
 
-export const services: Service[] = [
+/** Osiem kart usług na stronie głównej i w cenniku. Każda prowadzi do swojej podstrony. */
+export const karty: { title: string; text: string; icon: IkonaNazwa; href: string }[] = [
   {
-    id: "wizytowka",
-    title: "Strona wizytówka",
-    description:
-      "Prosta, szybka strona informacyjna dla małej firmy. Klient wchodzi, w 10 sekund wie czym się zajmujesz i jak się z Tobą skontaktować.",
-    points: [
-      "Jedna lub kilka podstron (oferta, o firmie, kontakt)",
-      "Formularz kontaktowy i klikalny telefon",
-      "Podstawowe SEO i Google Maps",
-      "Gotowa do wyświetlania na telefonie",
-    ],
+    title: "Strony internetowe Poznań",
+    text: "Wizytówki i strony firmowe projektowane od zera pod Twoją firmę. Każdy projekt jest inny, więc zawsze zaczynamy od rozmowy o Twoich klientach i celu strony.",
+    icon: "monitor",
+    href: "/projektowanie-stron-internetowych",
   },
   {
-    id: "sklepy",
-    title: "Integracje ze sklepami",
-    description:
-      "Wdrożenia e-commerce i podpinanie tego, co sprzedaje: płatności, wysyłki, systemów sprzedażowych i magazynowych.",
-    points: [
-      "Uruchomienie sklepu lub sekcji sklepowej",
-      "Płatności online (Przelewy24, Stripe, BLIK)",
-      "Integracje z kurierami i systemem magazynowym",
-      "Konfiguracja podatków, wysyłek i regulaminów",
-    ],
+    title: "Strony na telefon",
+    text: "Większość klientów wchodzi z telefonu. Nasze strony wyglądają i działają dobrze na smartfonie, tablecie i komputerze, z klikalnym numerem i mapą pod ręką.",
+    icon: "mobile",
+    href: "/responsywne-strony-www",
   },
   {
-    id: "wieksze-projekty",
-    title: "Większe projekty",
-    description:
-      "Rozbudowane serwisy pod indywidualne potrzeby, kiedy gotowe szablony przestają wystarczać.",
-    points: [
-      "Panele, kalkulatory, systemy rezerwacji",
-      "Blog i strefa dla klientów",
-      "Integracje z zewnętrznymi API i CRM",
-      "Wielojęzyczność i rozbudowana analityka",
-    ],
+    title: "Sklepy internetowe",
+    text: "Sprzedajesz w internecie albo chcesz zacząć? Budujemy sklepy z płatnościami BLIK i kartą, wysyłkami i prostą obsługą zamówień, dopasowane do skali sprzedaży.",
+    icon: "koszyk",
+    href: "/sklepy-internetowe",
+  },
+  {
+    title: "Modernizacje stron",
+    text: "Strona sprzed kilku lat źle wygląda na telefonie i długo się ładuje? Przebudujemy ją z zachowaniem adresów, żeby nie stracić pozycji w Google.",
+    icon: "odswiez",
+    href: "/modernizacje-stron-www",
+  },
+  {
+    title: "Pozycjonowanie stron",
+    text: "Chcesz, żeby klienci z okolicy znajdowali Cię w Google przed konkurencją? Audyt, poprawki techniczne, treści pod frazy i profil firmy w Mapach Google.",
+    icon: "szukaj",
+    href: "/pozycjonowanie-stron-www",
+  },
+  {
+    title: "Reklamy Google Ads",
+    text: "Kampanie w wyszukiwarce rozliczane do telefonów, zapytań i sprzedaży, a nie do kliknięć. Wykluczamy frazy, które tylko zjadają budżet.",
+    icon: "megafon",
+    href: "/reklamy-google-ads",
+  },
+  {
+    title: "Hosting i domeny",
+    text: "Pierwszy rok hostingu i certyfikat SSL w cenie każdej strony. Domenę rejestrujemy na Twoje dane, a pocztę firmową podpinamy pod Twój adres.",
+    icon: "serwer",
+    href: "/hosting",
+  },
+  {
+    title: "Systemy rezerwacji",
+    text: "Rezerwacje online na stronie salonu, gabinetu czy warsztatu: wybór usługi, osoby i wolnego terminu, przypomnienia i panel. Bez prowizji od wizyt.",
+    icon: "kalendarz",
+    href: "/systemy-rezerwacji-online",
   },
 ];

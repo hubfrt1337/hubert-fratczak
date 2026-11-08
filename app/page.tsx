@@ -1,31 +1,54 @@
-import { Header } from "@/components/Header";
-import { Hero } from "@/components/Hero";
-import { Services } from "@/components/Services";
-import { Portfolio } from "@/components/Portfolio";
+import Link from "next/link";
+import { Strona } from "@/components/sekcje/Strona";
+import { HeroGlowny } from "@/components/sekcje/Hero";
+import { Tekst } from "@/components/sekcje/Tekst";
+import { WycenaPas } from "@/components/sekcje/WycenaPas";
+import {
+  Dlaczego,
+  Doswiadczenie,
+  GranatCechy,
+  KartyUslug,
+  PasKontaktu,
+  PasParallax,
+  ZoltaKarta,
+} from "@/components/sekcje/Bloki";
+import { Liczniki } from "@/components/sekcje/Liczniki";
+import { Realizacje } from "@/components/sekcje/Realizacje";
 import { Testimonials } from "@/components/Testimonials";
-import { Pricing } from "@/components/Pricing";
-import { Faq } from "@/components/Faq";
-import { About } from "@/components/About";
-import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
 
+/**
+ * Strona główna Webuko. Kolejność sekcji jak u dużych agencji (wzór: webmania.pl):
+ * hero → tekst → [opinie Google] → wycena → doświadczenie → pas zdjęciowy → karty usług
+ * → co wyróżnia → dlaczego my → liczniki → realizacje → [opinie] → żółta karta → pas kontaktu.
+ * Opinie pokażą się same, gdy w data/testimonials.ts będą prawdziwe opinie klientów.
+ */
 export default function HomePage() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <Portfolio />
-        {/* Ukryte 2026-10-25 (decyzja autora): <ForWho /> i <Process /> — komponenty zostają, wystarczy odkomentować. */}
-        <Services />
-        {/* Renderuje się dopiero, gdy w data/testimonials.ts pojawią się opinie. */}
-        <Testimonials />
-        <Pricing />
-        <Faq />
-        <About />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <Strona>
+      <HeroGlowny />
+      <Tekst lekki="Projektowanie stron" gruby="Poznań">
+        <p>
+          Dobra strona internetowa to pierwszy krok do nowych klientów. Pomożemy Ci zbudować stronę,
+          która przyciąga wzrok, jasno pokazuje ofertę i zachęca do kontaktu. Taka strona staje się
+          najlepszą wizytówką Twojej firmy. <Link href="/projektowanie-stron-internetowych">Projektujemy strony
+          internetowe</Link> dla firm z Poznania i całej Polski, budujemy{" "}
+          <Link href="/sklepy-internetowe">sklepy</Link> i <Link href="/systemy-rezerwacji-online">systemy
+          rezerwacji</Link>, a potem dbamy o to, żeby klienci znajdowali Cię w{" "}
+          <Link href="/pozycjonowanie-stron-www">Google</Link>. Z nami odświeżysz wizerunek firmy,
+          konkretnie przedstawisz ofertę i zdobędziesz nowe zlecenia.
+        </p>
+      </Tekst>
+      <Testimonials />
+      <WycenaPas />
+      <Doswiadczenie />
+      <PasParallax />
+      <KartyUslug />
+      <GranatCechy />
+      <Dlaczego />
+      <Liczniki />
+      <Realizacje />
+      <ZoltaKarta />
+      <PasKontaktu />
+    </Strona>
   );
 }

@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { Contact } from "@/components/Contact";
+import { Strona } from "@/components/sekcje/Strona";
+import { HeroPodstrona } from "@/components/sekcje/Hero";
+import { WycenaPas } from "@/components/sekcje/WycenaPas";
+import { PasKontaktu } from "@/components/sekcje/Bloki";
 import { Container } from "@/components/ui/Container";
 import { ArrowIcon, CheckIcon } from "@/components/ui/Icons";
 import { projects } from "@/data/projects";
@@ -44,42 +45,35 @@ export default async function ProjectPage({ params }: Props) {
   const others = projects.filter((item) => item.slug !== project.slug).slice(0, 3);
 
   return (
-    <>
+    <Strona>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             breadcrumbJsonLd([
-              { name: "Realizacje", path: "/#portfolio" },
+              { name: "Realizacje", path: "/realizacje" },
               { name: project.name, path: `/realizacje/${project.slug}` },
             ]),
           ),
         }}
       />
-      <Header />
-      <main className="py-12 sm:py-20">
+      <HeroPodstrona title={project.name} subtitle={project.category} lekki={project.kind} />
+      <div className="py-12 sm:py-20">
         <Container className="max-w-4xl">
           <nav aria-label="Okruszki" className="text-sm text-ink-500">
             <Link href="/" className="hover:text-accent-700">
               Strona główna
             </Link>{" "}
             ›{" "}
-            <Link href="/#portfolio" className="hover:text-accent-700">
+            <Link href="/realizacje" className="hover:text-accent-700">
               Realizacje
             </Link>{" "}
             › <span className="text-ink-700">{project.name}</span>
           </nav>
 
-          <p className="eyebrow mt-8">{project.category}</p>
-          <h1 className="mt-3 text-4xl leading-[1.1] font-bold sm:text-5xl">{project.name}</h1>
-          {project.kind ? (
-            <p className="mt-4 inline-flex rounded-full border border-accent-200 bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-700">
-              {project.kind}
-            </p>
-          ) : null}
           <p className="mt-6 text-lg leading-relaxed text-ink-600">{project.summary}</p>
 
-          <div className="relative mt-10 aspect-video w-full overflow-hidden rounded-2xl border border-ink-100 bg-ink-100">
+          <div className="leaf-a relative mt-10 aspect-video w-full overflow-hidden border border-ink-100 bg-ink-100">
             <Image
               src={project.image}
               alt={project.imageAlt}
@@ -109,7 +103,7 @@ export default async function ProjectPage({ params }: Props) {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-ink-950">Jak to zrobiłem</h2>
+              <h2 className="text-2xl font-bold text-ink-950">Jak to zrobiliśmy</h2>
               <div className="mt-4 space-y-4">
                 {project.approach.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
@@ -136,7 +130,7 @@ export default async function ProjectPage({ params }: Props) {
                 {industry.shortName}
               </Link>
             ) : null}
-            <a href="#kontakt" className="btn-primary">
+            <a href="#wycena" className="btn-sun">
               Chcę podobną stronę
               <ArrowIcon />
             </a>
@@ -159,9 +153,9 @@ export default async function ProjectPage({ params }: Props) {
             </ul>
           </section>
         </Container>
-      </main>
-      <Contact />
-      <Footer />
-    </>
+      </div>
+      <WycenaPas />
+      <PasKontaktu />
+    </Strona>
   );
 }

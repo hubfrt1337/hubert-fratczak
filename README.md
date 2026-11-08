@@ -1,4 +1,15 @@
-# Hubert Frątczak — strona wizytówka + sprzedażowa
+# Webuko.pl (na razie pod hubertfratczak.pl) — strona firmowa + sprzedażowa
+
+Od 2026-11-08 strona występuje jako firma **Webuko.pl** (domena do kupienia; kolory: morski + pomarańczowe CTA) (bez zdjęcia i sekcji „O mnie”, teksty w liczbie mnogiej).
+Układ i kolejność sekcji skopiowane z webmania.pl (strona główna, podstrony usług, cennik, FAQ, wycena, kontakt),
+treści, liczby, realizacje i ikony własne. Opinie i blog pojawią się dopiero, gdy będą prawdziwe.
+
+- Sekcje: `components/sekcje/` (Hero, Tekst, WycenaPas, Bloki, Liczniki, Realizacje, Oferta, Strona).
+- Podstrony usług: dane w `data/uslugi.ts`, układ w `components/StronaUslugi.tsx`, adresy w `app/<slug>/page.tsx`.
+- Treści wspólne (cechy, liczniki, technologie, kroki): `data/wspolne.ts`; karty usług: `data/services.ts`; menu: `data/site.ts`.
+- Tła sekcji z kolażu realizacji: `node scripts/build-tla.mjs` → `public/tla/`.
+- Telefon nie trafia do HTML-a: przyciski „Zadzwoń” (`components/CallReveal.tsx`) składają numer po kliknięciu.
+Imię i nazwisko zostaje tylko w polityce prywatności (administrator danych, wymóg RODO).
 
 Next.js 15 (App Router) · TypeScript · Tailwind CSS 4 · Framer Motion · deploy na Vercel.
 Cała strona jest statyczna — brak backendu, formularze wysyłane przez zewnętrzny serwis.
@@ -44,7 +55,6 @@ w VS Code wyszukaj `\[[A-Z_0-9]+\]` z włączonym regexem.
 | [`data/services.ts`](data/services.ts) | 3 karty oferty | — |
 | [`data/process.ts`](data/process.ts) | 4 kroki procesu | — |
 | [`data/faq.ts`](data/faq.ts) | pytania i odpowiedzi | — |
-| [`components/About.tsx`](components/About.tsx) | sekcja „O mnie” | uzupełnione (bio + zdjęcie) |
 | [`app/polityka-prywatnosci/page.tsx`](app/polityka-prywatnosci/page.tsx) | polityka prywatności | `[NAZWA_FIRMY]`, `[NIP]`, `[DATA_AKTUALIZACJI]`, … |
 
 ### Obrazki
@@ -55,14 +65,12 @@ w kodzie nie trzeba zmieniać:
 | Plik | Wymiary | Gdzie się pojawia |
 | --- | --- | --- |
 | `public/hero.png` | 1200×900 | kolaż z miniatur portfolio (`npm run hero`) — obecnie nieużywany, hero pokazuje kartę oferty z `projekt-4` i `projekt-6` w tle |
-| `public/authorHubert.png` | 800×800 | Twoje zdjęcie w sekcji „O mnie” (już wgrane) |
 | `public/portfolio/projekt-1..6.png` | 1600×900 | miniatury projektów (16:9); `projekt-5/6` to rzesy2 i paznokcie robione z dysku |
 | `public/og.png` | 1200×630 | podgląd przy udostępnianiu linku (Facebook, LinkedIn) — generuje `npm run og` |
 | `public/favicon.svg`, `public/apple-touch-icon.png` | 64, 180 | ikona w karcie przeglądarki |
 
 Wszystkie obrazy idą przez `next/image` (automatyczna optymalizacja, WebP, lazy loading —
 poza hero, które ma `priority`). Jeśli podmienisz na `.jpg`, popraw rozszerzenie w
-`data/projects.ts` oraz w `components/Hero.tsx` / `components/About.tsx`.
 
 ### Zrzuty ekranu realizacji
 

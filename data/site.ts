@@ -1,45 +1,67 @@
 /**
- * Centralne dane strony — wszystko, co podmieniasz najczęściej, jest tutaj.
- * Placeholdery w [NAWIASACH] zamień na własne treści.
+ * Centralne dane strony Webuko: kontakt, menu, stopka.
  */
 
 export const site = {
-  name: "Hubert Frątczak",
+  name: "Webuko",
   role: "Tworzenie stron internetowych",
+  /** Hasło pod logo i w stopce. */
+  tagline: "Strony internetowe dla firm",
   /** Adres kanoniczny — z www, bo Vercel przekierowuje bezhostową wersję na www. */
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.hubertfratczak.pl",
 
   email: "kontakt@hubertfratczak.pl",
   /**
-   * Pusty string = telefon w ogóle nie pojawia się na stronie (ani w stopce,
-   * ani w sekcji kontakt). Wpisz numer, żeby go przywrócić.
-   */
-  phone: "",
-  /** Wersja do linku tel: — bez spacji, np. "+48792760270". */
-  phoneHref: "",
-  /**
-   * Numer pokazywany dopiero po kliknięciu "Pokaż numer" w sekcji kontakt.
-   * Nie ma go w HTML-u strony, więc proste boty zbierające numery go nie widzą.
-   * Pusty string = karta "Wolisz porozmawiać?" znika.
+   * Telefon nie trafia do HTML-a strony: przyciski „Zadzwoń” składają numer dopiero po kliknięciu
+   * (na telefonie od razu dzwonią, na komputerze pokazują numer). Pusty string = przyciski znikają.
    */
   callPhone: "+48 792 760 270",
-  /** Pusty string = miasto nie pojawia się w stopce. */
   city: "Poznań",
 
   // Zostaw pusty string, żeby link nie pojawił się w stopce.
   social: {
-    linkedin: "",
-    github: "",
     facebook: "",
     instagram: "",
+    linkedin: "",
   } as Record<string, string>,
 };
 
-// Ścieżki z "/" na początku, żeby linki działały też z podstron (np. polityki prywatności).
-export const nav = [
-  { label: "Oferta", href: "/#oferta" },
-  { label: "Portfolio", href: "/#portfolio" },
-  { label: "Cennik", href: "/#cennik" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Kontakt", href: "/#kontakt" },
-] as const;
+export type NavItem = { label: string; href: string; children?: { label: string; href: string }[] };
+
+/** Podstrony usług w menu „Oferta” (kolejność jak w menu). Dane stron: data/uslugi.ts. */
+export const offerMenu = [
+  { label: "Projektowanie stron internetowych", href: "/projektowanie-stron-internetowych" },
+  { label: "Responsywne strony internetowe", href: "/responsywne-strony-www" },
+  { label: "Modernizacje stron www", href: "/modernizacje-stron-www" },
+  { label: "Aktualizacje stron internetowych", href: "/aktualizacja-stron-internetowych" },
+  { label: "Strony internetowe z panelem (CMS)", href: "/strony-internetowe-z-cms" },
+  { label: "Sklepy internetowe", href: "/sklepy-internetowe" },
+  { label: "Systemy rezerwacji online", href: "/systemy-rezerwacji-online" },
+  { label: "Pozycjonowanie stron www", href: "/pozycjonowanie-stron-www" },
+  { label: "Pozycjonowanie lokalne", href: "/pozycjonowanie-lokalne" },
+  { label: "Reklamy Google Ads", href: "/reklamy-google-ads" },
+  { label: "Hosting i domeny", href: "/hosting" },
+];
+
+export const nav: NavItem[] = [
+  { label: "O nas", href: "/o-nas" },
+  { label: "Oferta", href: "/strony-internetowe", children: offerMenu },
+  { label: "Współpraca", href: "/wspolpraca" },
+  { label: "Realizacje", href: "/realizacje" },
+  { label: "Cennik", href: "/strony-www-cennik" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Wycena", href: "/bezplatna-wycena" },
+  { label: "Kontakt", href: "/kontakt" },
+];
+
+/** Kolumna „Informacje” w stopce. */
+export const footerInfo = [
+  { label: "O nas", href: "/o-nas" },
+  { label: "Oferta", href: "/strony-internetowe" },
+  { label: "Cennik", href: "/strony-www-cennik" },
+  { label: "Współpraca", href: "/wspolpraca" },
+  { label: "Realizacje", href: "/realizacje" },
+  { label: "Pytania i odpowiedzi", href: "/faq" },
+  { label: "Bezpłatna wycena", href: "/bezplatna-wycena" },
+  { label: "Kontakt", href: "/kontakt" },
+];

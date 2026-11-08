@@ -17,9 +17,10 @@ const sharp = createRequire(import.meta.url)("sharp");
 const WIDTH = 1200;
 const HEIGHT = 630;
 
-const INK = "#0e1116";
-const ACCENT = "#d14415";
-const MUTED = "#b0b9c8";
+const INK = "#052424";
+const ACCENT = "#ff8f4d";
+const GLOW = "#1a8982";
+const MUTED = "#a8ddd8";
 
 const CARD_W = 480;
 const CARD_H = 270; // 16:9
@@ -50,8 +51,8 @@ const backdrop = Buffer.from(
   `<svg xmlns="http://www.w3.org/2000/svg" width="${WIDTH}" height="${HEIGHT}">
      <defs>
        <radialGradient id="glow" cx="78%" cy="24%" r="62%">
-         <stop offset="0%" stop-color="${ACCENT}" stop-opacity="0.22"/>
-         <stop offset="100%" stop-color="${ACCENT}" stop-opacity="0"/>
+         <stop offset="0%" stop-color="${GLOW}" stop-opacity="0.45"/>
+         <stop offset="100%" stop-color="${GLOW}" stop-opacity="0"/>
        </radialGradient>
      </defs>
      <rect width="${WIDTH}" height="${HEIGHT}" fill="${INK}"/>
@@ -65,12 +66,12 @@ const textLayer = Buffer.from(
        <rect x="72" y="214" width="6" height="176" fill="${ACCENT}"/>
 
        <text x="104" y="264" font-size="58" font-weight="700" fill="#ffffff"
-             letter-spacing="-1.5">Hubert Frątczak</text>
+             letter-spacing="-1.5">webuko.pl</text>
 
        <text x="104" y="318" font-size="31" font-weight="400" fill="${MUTED}">Strony internetowe dla firm</text>
 
        <text x="104" y="376" font-size="22" font-weight="600" fill="${MUTED}"
-             letter-spacing="0.5">Wizytówki · Sklepy · Serwisy firmowe</text>
+             letter-spacing="0.5">Wizytówki · Sklepy · Rezerwacje online</text>
 
        <text x="72" y="556" font-size="24" font-weight="700" fill="${ACCENT}"
              letter-spacing="0.5">www.hubertfratczak.pl</text>

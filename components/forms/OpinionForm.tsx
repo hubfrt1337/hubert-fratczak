@@ -117,7 +117,7 @@ export function OpinionForm() {
       <FormStatus
         status={status}
         error={error}
-        successMessage="Dziękuję za opinię! To dla mnie realna pomoc."
+        successMessage="Dziękujemy za opinię! To dla nas realna pomoc."
       />
 
       <button

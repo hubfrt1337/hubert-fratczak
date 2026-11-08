@@ -1,63 +1,77 @@
 @import "tailwindcss";
 
 /* --------------------------------------------------------------------------
-   Paleta i typografia — jedno miejsce, w którym zmieniasz wygląd całej strony.
-   Kolor bazowy: grafit (ink). Kolor akcentu: ceglana pomarańcz (accent).
+   Webuko: paleta i typografia w jednym miejscu.
+   ink = grafit tekstu, accent = morski (petrol) marki, sun = pomarańczowe przyciski (CTA).
    -------------------------------------------------------------------------- */
 @theme {
-  --color-ink-50: #f6f7f9;
-  --color-ink-100: #eceef2;
-  --color-ink-200: #d5dae2;
-  --color-ink-300: #b0b9c8;
-  --color-ink-400: #8492a7;
-  --color-ink-500: #64738c;
-  --color-ink-600: #4e5a70;
-  --color-ink-700: #3f485a;
-  --color-ink-800: #2b3140;
-  --color-ink-900: #191d27;
-  --color-ink-950: #0e1116;
+  --color-ink-50: #f7f8fa;
+  --color-ink-100: #eef0f3;
+  --color-ink-200: #dde2e8;
+  --color-ink-300: #b9c1cc;
+  --color-ink-400: #8b95a3;
+  --color-ink-500: #667080;
+  --color-ink-600: #4b5563;
+  --color-ink-700: #3a424d;
+  --color-ink-800: #2b323a;
+  --color-ink-900: #1d2329;
+  --color-ink-950: #12161b;
 
-  /* accent-600 na białym tle: kontrast 4.6:1 — biały tekst na przycisku spełnia WCAG AA */
-  --color-accent-50: #fdf3ef;
-  --color-accent-100: #fbe3d9;
-  --color-accent-200: #f6c3b0;
-  --color-accent-300: #ef9a7c;
-  --color-accent-400: #e56a45;
-  --color-accent-500: #d9532c;
-  --color-accent-600: #d14415;
-  --color-accent-700: #a8340f;
-  --color-accent-800: #7f2810;
+  /* Morski (petrol): zaufanie i spokój jak niebieski, ale też technologia i rozwój.
+     Biały tekst na accent-600 ma kontrast ok. 6:1 (WCAG AA). */
+  --color-accent-50: #edf8f7;
+  --color-accent-100: #d3eeeb;
+  --color-accent-200: #a8ddd8;
+  --color-accent-300: #6fc4bd;
+  --color-accent-400: #36a59e;
+  --color-accent-500: #1a8982;
+  --color-accent-600: #0f6e69;
+  --color-accent-700: #0e5856;
+  --color-accent-800: #0f4746;
+  --color-accent-900: #0f3b3b;
+  --color-accent-950: #052424;
 
-  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  /* Pomarańcz (nazwa tokenu „sun” zostaje): kolor działania na przyciskach i wyróżnieniach.
+     Komplementarny do morskiego, więc CTA mocno odcinają się od tła. Tekst na nim: accent-950 (kontrast ok. 7:1). */
+  --color-sun-200: #ffe0cc;
+  --color-sun-300: #ffb88a;
+  --color-sun-400: #ff8f4d;
+  --color-sun-500: #f2701f;
+  /* Ciemniejszy pomarańcz do tekstu na jasnym tle (np. „.pl” w logo w stopce), kontrast > 3:1. */
+  --color-sun-600: #c4501a;
+
+  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    /* sticky header nie zasłania sekcji przy skoku do kotwicy */
-    scroll-padding-top: 5.5rem;
+    scroll-padding-top: 6rem;
   }
 
   body {
     background-color: #ffffff;
-    color: var(--color-ink-800);
+    color: var(--color-ink-700);
     font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     text-wrap: pretty;
   }
 
   h1,
   h2,
-  h3 {
+  h3,
+  h4 {
     font-family: var(--font-display);
-    color: var(--color-ink-950);
-    letter-spacing: -0.02em;
+    color: var(--color-ink-900);
+    line-height: 1.25;
     text-wrap: balance;
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-accent-600);
+    outline: 2px solid var(--color-sun-400);
     outline-offset: 2px;
   }
 
@@ -65,9 +79,6 @@
     html {
       scroll-behavior: auto;
     }
-
-    /* Elementy z komponentu Reveal są od razu widoczne — Framer Motion nadal
-       ustawia style inline, dlatego potrzebne jest !important. */
     [data-reveal] {
       opacity: 1 !important;
       transform: none !important;
@@ -75,28 +86,66 @@
   }
 }
 
-/* Bazowy przycisk jako utility — dzięki temu można go rozszerzać przez @apply. */
 @utility btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200;
+  @apply inline-flex items-center justify-center gap-2 rounded-[14px] px-7 py-3 text-[15px] font-bold tracking-wide uppercase transition-all duration-200;
 }
 
 @layer components {
+  /* Pomarańczowy przycisk sprzedażowy (hero, wycena, karty). */
+  .btn-sun {
+    @apply btn bg-sun-400 text-accent-950 shadow-lg shadow-black/15 hover:-translate-y-0.5 hover:bg-sun-300;
+  }
+  .btn-blue {
+    @apply btn bg-accent-600 text-white hover:bg-accent-700;
+  }
+  .btn-grafit {
+    @apply btn bg-ink-700 text-white hover:bg-ink-800;
+  }
+  .btn-outline-white {
+    @apply btn border-2 border-white/70 text-white hover:bg-white hover:text-accent-800;
+  }
+  /* Starsze nazwy używane w podstronach realizacji i formularzach. */
   .btn-primary {
     @apply btn bg-accent-600 text-white hover:bg-accent-700;
   }
   .btn-secondary {
-    @apply btn border border-ink-200 bg-white text-ink-900 hover:border-ink-300 hover:bg-ink-50;
+    @apply btn border-2 border-ink-200 bg-white text-ink-800 hover:border-accent-600 hover:text-accent-700;
   }
-  .btn-ghost-dark {
-    @apply btn border border-white/25 text-white hover:bg-white/10;
+
+  /* „Liść”: asymetryczne zaokrąglenie kart, na przemian a/b. */
+  .leaf-a {
+    border-radius: 34px 8px;
   }
+  .leaf-b {
+    border-radius: 8px 34px;
+  }
+
   .field {
-    @apply w-full rounded-xl border border-ink-200 bg-white px-4 py-3 text-base text-ink-900 placeholder:text-ink-400 focus:border-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-600/20;
+    @apply w-full rounded-[10px] border border-ink-200 bg-white px-4 py-3 text-base text-ink-900 placeholder:text-ink-400 focus:border-accent-600 focus:ring-2 focus:ring-accent-600/20 focus:outline-none;
   }
   .label {
-    @apply mb-2 block text-sm font-medium text-ink-800;
+    @apply mb-1.5 block text-sm font-semibold text-ink-800;
   }
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.18em] text-accent-700;
+    @apply text-xs font-bold tracking-[0.18em] text-accent-600 uppercase;
+  }
+
+  /* Nagłówek sekcji: lekka + gruba część jak „Bezpłatna **wycena strony www**”. */
+  .h-sekcja {
+    @apply text-[28px] leading-tight font-light sm:text-[38px];
+  }
+  .h-sekcja strong {
+    @apply font-extrabold;
+  }
+
+  /* Treść tekstowa sekcji (akapity, listy, linki). */
+  .tresc p + p {
+    @apply mt-4;
+  }
+  .tresc a {
+    @apply font-semibold text-accent-600 underline-offset-2 hover:underline;
+  }
+  .tresc strong {
+    @apply font-semibold text-ink-900;
   }
 }

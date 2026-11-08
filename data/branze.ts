@@ -11,7 +11,7 @@ export type Industry = {
   path: string;
   /** Krótka nazwa do linków w stopce i okruszków. */
   shortName: string;
-  /** <title> (do niego dokleja się „| Hubert Frątczak”). */
+  /** <title> (do niego dokleja się „| Webuko”). */
   metaTitle: string;
   metaDescription: string;
   eyebrow: string;
@@ -67,14 +67,14 @@ export const industries: Industry[] = [
       title: "Booksy czy własne rezerwacje?",
       paragraphs: [
         "Nie musisz rezygnować z Booksy. Jeśli już z niego korzystasz, strona dostaje wyraźny przycisk „Zarezerwuj”, który prowadzi prosto do Twojego profilu. Strona robi wtedy to, czego Booksy nie zrobi: pokazuje Twoje prace w Twoim stylu i pomaga znaleźć salon w Google.",
-        "Jeśli wolisz mieć wszystko u siebie, mogę podpiąć system rezerwacji, który napisałem dla salonu Mililash. Klientka wybiera zabieg, stylistkę i wolny termin, dostaje potwierdzenie mailem, a Ty widzisz wizyty w panelu i w Kalendarzu Google. Bez prowizji od wizyt. Taki system wyceniam osobno, po rozmowie o tym, jak pracuje Twój salon.",
+        "Jeśli wolisz mieć wszystko u siebie, możemy podpiąć system rezerwacji, który napisaliśmy dla salonu Mililash. Klientka wybiera zabieg, stylistkę i wolny termin, dostaje potwierdzenie mailem, a Ty widzisz wizyty w panelu i w Kalendarzu Google. Bez prowizji od wizyt. Taki system wyceniamy osobno, po rozmowie o tym, jak pracuje Twój salon.",
       ],
     },
     faq: [
       {
         question: "Ile kosztuje strona dla salonu?",
         answer:
-          "Wizytówka z galerią prac, cennikiem, mapą i przyciskiem rezerwacji kosztuje 1 490 zł. Strona firmowa z osobną podstroną dla każdego zabiegu, lepsza pod Google, kosztuje 2 950 zł. Nie doliczam VAT, więc to kwoty końcowe. Własny system rezerwacji wyceniam osobno.",
+          "Wizytówka z galerią prac, cennikiem, mapą i przyciskiem rezerwacji kosztuje 1 490 zł. Strona firmowa z osobną podstroną dla każdego zabiegu, lepsza pod Google, kosztuje 2 950 zł. Nie doliczamy VAT, więc to kwoty końcowe. Własny system rezerwacji wyceniamy osobno.",
       },
       {
         question: "Mam Instagrama. Po co mi jeszcze strona?",
@@ -84,12 +84,12 @@ export const industries: Industry[] = [
       {
         question: "Czy mogę sama zmieniać cennik i zdjęcia?",
         answer:
-          "W pakiecie Strona firmowa dostajesz panel, w którym zmienisz cennik, zdjęcia i teksty bez znajomości kodu. Przy wizytówce zmiany robię ja: w okresie poprawek bezpłatnie, później wyceniam je z góry.",
+          "W pakiecie Strona firmowa dostajesz panel, w którym zmienisz cennik, zdjęcia i teksty bez znajomości kodu. Przy wizytówce zmiany robimy my: w okresie poprawek bezpłatnie, później wyceniamy je z góry.",
       },
       {
         question: "Ile trwa zrobienie strony salonu?",
         answer:
-          "Wizytówka jest gotowa w 1–3 dni od momentu, w którym mam zdjęcia prac i cennik. Najczęściej czeka się właśnie na zdjęcia, więc warto je przygotować wcześniej. Mogą być z telefonu, byle ostre i w dobrym świetle.",
+          "Wizytówka jest gotowa w 1–3 dni od momentu, w którym mamy zdjęcia prac i cennik. Najczęściej czeka się właśnie na zdjęcia, więc warto je przygotować wcześniej. Mogą być z telefonu, byle ostre i w dobrym świetle.",
       },
     ],
   },
@@ -134,24 +134,24 @@ export const industries: Industry[] = [
       title: "Jak klienci szukają fachowca w Google",
       paragraphs: [
         "Wpisują usługę i miejsce: „tapicer Poznań”, „mechanik Jeżyce”, „hydraulik Swarzędz”. Na górze wyników są mapki z profilami firm, a pod nimi zwykłe strony. Dobra strona pomaga w obu miejscach, bo Google lepiej rozumie, co robisz i gdzie.",
-        "Dlatego na stronie fachowca każda usługa ma swój krótki opis, a obszar pracy jest wypisany wprost. Przy wdrożeniu pokazuję też, jak połączyć stronę z profilem firmy w Google i jak prosić zadowolonych klientów o opinię.",
+        "Dlatego na stronie fachowca każda usługa ma swój krótki opis, a obszar pracy jest wypisany wprost. Przy wdrożeniu pokazujemy też, jak połączyć stronę z profilem firmy w Google i jak prosić zadowolonych klientów o opinię.",
       ],
     },
     faq: [
       {
         question: "Ile kosztuje strona dla warsztatu?",
         answer:
-          "Wizytówka z usługami, zdjęciami, mapą i formularzem kosztuje 1 490 zł. Strona firmowa z osobną podstroną dla każdej usługi, lepsza pod Google, kosztuje 2 950 zł. Nie doliczam VAT, więc to kwoty końcowe.",
+          "Wizytówka z usługami, zdjęciami, mapą i formularzem kosztuje 1 490 zł. Strona firmowa z osobną podstroną dla każdej usługi, lepsza pod Google, kosztuje 2 950 zł. Nie doliczamy VAT, więc to kwoty końcowe.",
       },
       {
         question: "Nie mam zdjęć realizacji. Co wtedy?",
         answer:
-          "Wystarczą zdjęcia z telefonu z najbliższych zleceń. Podpowiem, jak je zrobić, żeby dobrze wyglądały. Na start mogę wstawić zdjęcia poglądowe i podmienić je, gdy pojawią się Twoje.",
+          "Wystarczą zdjęcia z telefonu z najbliższych zleceń. Podpowiemy, jak je zrobić, żeby dobrze wyglądały. Na start możemy wstawić zdjęcia poglądowe i podmienić je, gdy pojawią się Twoje.",
       },
       {
         question: "Nie mam czasu pisać tekstów.",
         answer:
-          "Nie musisz. Wystarczy rozmowa przez telefon: opowiadasz, co robisz, gdzie dojeżdżasz i o co najczęściej pytają klienci. Teksty piszę ja, a Ty tylko je sprawdzasz.",
+          "Nie musisz. Wystarczy rozmowa przez telefon: opowiadasz, co robisz, gdzie dojeżdżasz i o co najczęściej pytają klienci. Teksty piszemy my, a Ty tylko je sprawdzasz.",
       },
       {
         question: "Mam już profil firmy w Google. Czy strona coś da?",

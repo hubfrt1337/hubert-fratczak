@@ -1,51 +1,59 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { site } from "@/data/site";
 import { PhoneIcon } from "./ui/Icons";
 
+const telHref = () => `tel:${site.callPhone.replace(/\s/g, "")}`;
+
 /**
- * Numer telefonu schowany pod przyciskiem — renderuje się dopiero po kliknięciu,
- * więc nie ma go w HTML-u strony.
+ * Przycisk „Zadzwoń”: numer nie siedzi w HTML-u (proste boty go nie zbiorą).
+ * Na telefonie od razu wybiera numer, na komputerze pokazuje go w miejscu przycisku.
  */
-export function CallReveal() {
+export function CallButton({
+  className = "btn-sun",
+  label = "Zadzwoń",
+  showIcon = true,
+}: {
+  className?: string;
+  label?: string;
+  showIcon?: boolean;
+}) {
   const [revealed, setRevealed] = useState(false);
-  const linkRef = useRef<HTMLAnchorElement>(null);
-
-  // Przycisk znika po kliknięciu — przenosimy fokus na numer, żeby nie zginął.
-  useEffect(() => {
-    if (revealed) linkRef.current?.focus();
-  }, [revealed]);
-
   if (!site.callPhone) return null;
 
-  return (
-    <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6">
-      <h3 className="text-lg font-semibold text-white">Wolisz porozmawiać?</h3>
-      <p className="mt-2 text-sm leading-relaxed text-ink-300">
-        Zadzwoń. W kilkanaście minut ustalimy, czego potrzebujesz, a Ty od razu
-        dowiesz się, ile to mniej więcej kosztuje i kiedy strona może być gotowa.
-      </p>
+  if (revealed) {
+    return (
+      <a href={telHref()} className={className}>
+        {showIcon ? <PhoneIcon /> : null}
+        {site.callPhone}
+      </a>
+    );
+  }
 
-      {revealed ? (
-        <a
-          ref={linkRef}
-          href={`tel:${site.callPhone.replace(/\s/g, "")}`}
-          className="btn-primary mt-5"
-        >
-          <PhoneIcon />
-          {site.callPhone}
-        </a>
-      ) : (
-        <button
-          type="button"
-          onClick={() => setRevealed(true)}
-          className="btn-ghost-dark mt-5"
-        >
-          <PhoneIcon />
-          Pokaż numer telefonu
-        </button>
-      )}
-    </div>
+  return (
+    <button
+      type="button"
+      className={className}
+      onClick={() => {
+        setRevealed(true);
+        if (window.matchMedia("(pointer: coarse)").matches) window.location.href = telHref();
+      }}
+    >
+      {showIcon ? <PhoneIcon /> : null}
+      {label}
+    </button>
   );
+}
+
+/** Zgodność wstecz ze starszymi komponentami. */
+export function PhoneButton({
+  buttonClassName = "btn-sun",
+  label = "Pokaż numer telefonu",
+}: {
+  buttonClassName?: string;
+  linkClassName?: string;
+  label?: string;
+}) {
+  return <CallButton className={buttonClassName} label={label} />;
 }

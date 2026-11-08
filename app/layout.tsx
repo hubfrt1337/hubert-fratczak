@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Sora } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import { site } from "@/data/site";
 import { businessJsonLd } from "@/data/jsonLd";
 import "./globals.css";
 
-const sora = Sora({
+const montserrat = Montserrat({
   subsets: ["latin", "latin-ext"],
-  weight: ["600", "700"],
-  variable: "--font-sora",
+  weight: ["600", "700", "800"],
+  variable: "--font-montserrat",
   display: "swap",
 });
 
@@ -19,7 +19,7 @@ const inter = Inter({
 
 const title = `Tworzenie stron internetowych Poznań | ${site.name}`;
 const description =
-  "Tworzę strony internetowe dla firm z Poznania i całej Polski: wizytówki od 1 490 zł, strony firmowe i sklepy. Płacisz raz, bez abonamentu i bez doliczania VAT. Wycena w 24 godziny.";
+  "Webuko: tworzymy strony internetowe dla firm z Poznania i całej Polski. Wizytówki od 1 490 zł, strony firmowe i sklepy. Płacisz raz, bez abonamentu. Bezpłatna wycena w 24 godziny.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -53,7 +53,10 @@ export const metadata: Metadata = {
     images: ["/og.png"],
   },
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-48.png", type: "image/png", sizes: "48x48" },
+    ],
     apple: "/apple-touch-icon.png",
   },
 };
@@ -64,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pl" className={`${sora.variable} ${inter.variable}`}>
+    <html lang="pl" className={`${montserrat.variable} ${inter.variable}`}>
       <body>
         {/* Dane firmy dla Google: kto, gdzie, za ile. Bez telefonu, bo numer celowo nie trafia do HTML-a (patrz CallReveal). */}
         <script

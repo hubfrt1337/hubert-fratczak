@@ -112,10 +112,14 @@ export const carePlan: CarePlan | null = null;
  * Poniżej wersja bez promocji — wyjaśnienie, co jest w cenie, a co nie.
  */
 export const pricingNote =
-  "Cena pakietu jest stała dla podanego zakresu. Dodatkowe podstrony, wersje językowe czy integracje wyceniam przed startem, po krótkiej rozmowie, bezpłatnie i bez zobowiązań.";
+  "Cena pakietu jest stała dla podanego zakresu. Dodatkowe podstrony, wersje językowe czy integracje wyceniamy przed startem, po krótkiej rozmowie, bezpłatnie i bez zobowiązań.";
 
-/** Pakiety do wyboru w formularzu kontaktowym. */
+/** Rodzaje projektów do wyboru w formularzu wyceny (pakiety z cennika + inne zlecenia). */
 export const budgetOptions = [
   ...plans.map((plan) => plan.budgetHint),
-  "jeszcze nie wiem",
+  "Modernizacja istniejącej strony",
+  "System rezerwacji lub aplikacja",
+  "SEO lub reklamy Google Ads",
+  "Hosting i domena",
+  "Inny projekt / jeszcze nie wiem",
 ];

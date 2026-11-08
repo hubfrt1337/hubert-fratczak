@@ -1,18 +1,20 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import Link from "next/link";
+import { useEffect, useId, useState, type FormEvent } from "react";
 import { submitForm, type SubmitStatus } from "@/lib/submitForm";
 import { budgetOptions } from "@/data/pricing";
-import { site } from "@/data/site";
 import { BUDGET_EVENT } from "../BudgetCta";
 import { FormStatus } from "./FormStatus";
 
+/** Szybki formularz wyceny (pas „Bezpłatna wycena strony www”). Pełna wersja: FormularzWyceny. */
 export function ContactForm() {
+  const id = useId();
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [error, setError] = useState<string | null>(null);
   const [budget, setBudget] = useState("");
 
-  // Kliknięcie "Zapytaj o ten pakiet" w cenniku podpowiada widełki budżetu.
+  // Kliknięcie „Zapytaj o ten pakiet” w cenniku podpowiada rodzaj projektu.
   useEffect(() => {
     const onPreselect = (event: Event) => {
       const value = (event as CustomEvent<string>).detail;
@@ -27,7 +29,7 @@ export function ContactForm() {
     const form = event.currentTarget;
     const data = new FormData(form);
 
-    // Honeypot — boty wypełniają ukryte pole, ludzie nie.
+    // Honeypot: boty wypełniają ukryte pole, ludzie nie.
     if (data.get("company_website")) {
       setStatus("success");
       return;
@@ -35,100 +37,41 @@ export function ContactForm() {
 
     setStatus("sending");
     setError(null);
-
     try {
       await submitForm({
-        subject: `Nowe zapytanie ze strony — ${String(data.get("name") ?? "")}`,
-        from_name: "Formularz kontaktowy",
-        // Web3Forms ustawia to jako Reply-To — odpowiadasz klientowi wprost
-        // z podglądu maila, bez kopiowania adresu.
+        subject: `Wycena ze strony: ${String(data.get("budget") ?? "")} (${String(data.get("name") ?? "")})`,
+        from_name: "Formularz wyceny (szybki)",
         replyto: String(data.get("email") ?? ""),
         name: String(data.get("name") ?? ""),
         email: String(data.get("email") ?? ""),
-        phone: String(data.get("phone") ?? "") || "—",
+        phone: String(data.get("phone") ?? "") || "brak",
         budget: String(data.get("budget") ?? ""),
-        message: String(data.get("message") ?? ""),
+        message: String(data.get("message") ?? "") || "brak",
       });
       setStatus("success");
       form.reset();
       setBudget("");
     } catch (err) {
       setStatus("error");
-      setError(
-        err instanceof Error
-          ? err.message
-          : "Coś poszło nie tak. Napisz proszę bezpośrednio na maila.",
-      );
+      setError(err instanceof Error ? err.message : "Coś poszło nie tak. Napisz do nas mailem.");
     }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5" noValidate={false}>
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label className="label" htmlFor="name">
-          Imię <span aria-hidden="true">*</span>
-        </label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          required
-          autoComplete="name"
-          className="field"
-          placeholder="Jan Kowalski"
-        />
-      </div>
-
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div>
-          <label className="label" htmlFor="email">
-            E-mail <span aria-hidden="true">*</span>
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            autoComplete="email"
-            className="field"
-            placeholder="jan@firma.pl"
-          />
-        </div>
-
-        <div>
-          <label className="label" htmlFor="phone">
-            Telefon <span className="font-normal text-ink-500">(opcjonalnie)</span>
-          </label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            autoComplete="tel"
-            inputMode="tel"
-            pattern="[0-9+\(\)\s\-]{9,20}"
-            title="Wpisz numer telefonu, np. 600 123 456"
-            aria-describedby="phone-hint"
-            className="field"
-            placeholder="600 123 456"
-          />
-        </div>
-      </div>
-      <p id="phone-hint" className="-mt-3 text-xs text-ink-500">
-        Zostaw numer, jeśli wolisz, żebym oddzwonił zamiast pisać.
-      </p>
-
-      <div>
-        <label className="label" htmlFor="budget">
-          Pakiet
+        <label className="label" htmlFor={`${id}-budget`}>
+          Rodzaj projektu <span className="font-normal text-ink-500">(wymagane)</span>
         </label>
         <select
-          id="budget"
+          id={`${id}-budget`}
           name="budget"
+          required
           className="field"
           value={budget}
           onChange={(event) => setBudget(event.target.value)}
         >
-          <option value="">Wybierz pakiet</option>
+          <option value="">Wybierz rodzaj projektu</option>
           {budgetOptions.map((option) => (
             <option key={option} value={option}>
               {option}
@@ -138,55 +81,92 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label className="label" htmlFor="message">
-          Opis projektu <span aria-hidden="true">*</span>
+        <label className="label" htmlFor={`${id}-name`}>
+          Imię i nazwisko lub nazwa firmy <span className="font-normal text-ink-500">(wymagane)</span>
+        </label>
+        <input id={`${id}-name`} name="name" type="text" required autoComplete="name" className="field" />
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label className="label" htmlFor={`${id}-email`}>
+            E-mail <span className="font-normal text-ink-500">(wymagane)</span>
+          </label>
+          <input id={`${id}-email`} name="email" type="email" required autoComplete="email" className="field" />
+        </div>
+        <div>
+          <label className="label" htmlFor={`${id}-phone`}>
+            Telefon
+          </label>
+          <input
+            id={`${id}-phone`}
+            name="phone"
+            type="tel"
+            autoComplete="tel"
+            inputMode="tel"
+            pattern="[0-9+\(\)\s\-]{9,20}"
+            title="Wpisz numer telefonu, np. 600 123 456"
+            className="field"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label className="label" htmlFor={`${id}-message`}>
+          Krótki opis projektu
         </label>
         <textarea
-          id="message"
+          id={`${id}-message`}
           name="message"
-          required
-          rows={5}
+          rows={4}
           className="field resize-y"
-          placeholder="Czym zajmuje się Twoja firma, co ma robić strona i na kiedy jest potrzebna."
+          placeholder="Czym zajmuje się firma, co ma robić strona, na kiedy jest potrzebna."
         />
       </div>
 
-      {/* honeypot — ukryte przed użytkownikiem i czytnikami ekranu */}
+      <label className="flex items-start gap-3 text-sm text-ink-600">
+        <input type="checkbox" name="consent" required className="mt-1 h-4 w-4 accent-accent-600" />
+        <span>
+          Potwierdzam zapoznanie się z{" "}
+          <Link href="/polityka-prywatnosci" className="font-semibold text-accent-600 hover:underline">
+            informacją o przetwarzaniu danych
+          </Link>
+          . <span className="text-ink-500">(wymagane)</span>
+        </span>
+      </label>
+
+      {/* honeypot: ukryte przed użytkownikiem i czytnikami ekranu */}
       <div className="absolute left-[-9999px]" aria-hidden="true">
-        <label htmlFor="company_website">Nie wypełniaj tego pola</label>
-        <input
-          id="company_website"
-          name="company_website"
-          type="text"
-          tabIndex={-1}
-          autoComplete="off"
-        />
+        <label htmlFor={`${id}-hp`}>Proszę zostawić to pole puste</label>
+        <input id={`${id}-hp`} name="company_website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
       <FormStatus
         status={status}
         error={error}
-        successMessage="Dziękuję! Wiadomość dotarła, odezwę się w ciągu 24 godzin."
+        successMessage="Dziękujemy! Zapytanie dotarło. Odezwiemy się z wyceną w ciągu 24 godzin."
       />
 
-      <button
-        type="submit"
-        disabled={status === "sending"}
-        className="btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
-      >
-        {status === "sending" ? "Wysyłam…" : "Wyślij zapytanie"}
-      </button>
+      <div className="flex flex-col gap-4 pt-1 sm:flex-row sm:items-center">
+        <button
+          type="submit"
+          disabled={status === "sending"}
+          className="btn-sun disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          {status === "sending" ? "Wysyłanie…" : "Wyślij zapytanie"}
+        </button>
+        <Link href="/bezplatna-wycena" className="text-sm font-semibold text-accent-600 hover:underline">
+          Pełny formularz wyceny ›
+        </Link>
+      </div>
 
       <p className="text-xs leading-relaxed text-ink-500">
-        Wysyłając formularz zgadzasz się na kontakt w sprawie zapytania. Szczegóły
-        w{" "}
-        <a
-          href="/polityka-prywatnosci"
-          className="underline underline-offset-2 hover:text-ink-800"
-        >
+        Dane z formularza wykorzystujemy tylko do przygotowania wyceny i odpowiedzi na zapytanie.
+        Więcej w{" "}
+        <Link href="/polityka-prywatnosci" className="underline underline-offset-2">
           polityce prywatności
-        </a>
-        . Wolisz mailem? {site.email}
+        </Link>
+        .
       </p>
     </form>
   );

@@ -3,7 +3,7 @@ import { cheapestPlan } from "./pricing";
 
 /**
  * Dane strukturalne (schema.org) dla Google: firma usługowa z Poznania, obsługująca też całą Polskę.
- * Adres tylko do miasta: pracuję u klienta albo zdalnie, nie przyjmuję w lokalu.
+ * Adres tylko do miasta: pracujemy u klienta albo zdalnie, bez biura dla klientów.
  */
 export const businessJsonLd = {
   "@context": "https://schema.org",
@@ -28,12 +28,6 @@ export const businessJsonLd = {
     { "@type": "City", name: "Poznań" },
     { "@type": "Country", name: "Polska" },
   ],
-  founder: {
-    "@type": "Person",
-    name: site.name,
-    jobTitle: "Twórca stron internetowych",
-    image: `${site.url}/authorHubert.png`,
-  },
   knowsLanguage: ["pl", "en"],
 };
 

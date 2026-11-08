@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import { Strona } from "@/components/sekcje/Strona";
+import { HeroPodstrona } from "@/components/sekcje/Hero";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -17,23 +17,22 @@ export const metadata: Metadata = {
  */
 export default function PrivacyPolicyPage() {
   return (
-    <>
-      <Header />
-      <main className="py-12 sm:py-20">
+    <Strona>
+      <HeroPodstrona title="Polityka prywatności" />
+      <div className="py-12 sm:py-20">
         <Container className="max-w-3xl">
-          <h1 className="text-3xl font-bold sm:text-4xl">Polityka prywatności</h1>
-          <p className="mt-3 text-sm text-ink-500">
-            Ostatnia aktualizacja: 10 października 2026
+          <p className=" text-sm text-ink-500">
+            Ostatnia aktualizacja: 8 listopada 2026
           </p>
 
           <div className="mt-10 space-y-8 text-base leading-relaxed text-ink-700">
             <section>
               <h2 className="text-xl font-semibold">1. Administrator danych</h2>
               <p className="mt-3">
-                Administratorem Twoich danych osobowych jest {site.name}, ul. Robocza
-                21a, Poznań. Usługi świadczę w ramach działalności nierejestrowanej
-                (art. 5 ustawy Prawo przedsiębiorców), dlatego nie posługuję się
-                numerem NIP ani REGON. Kontakt w sprawach danych osobowych:{" "}
+                Serwis {site.name} prowadzi Hubert Frątczak, ul. Robocza 21a, Poznań,
+                i to on jest administratorem Twoich danych osobowych. Usługi są
+                świadczone w ramach działalności nierejestrowanej (art. 5 ustawy
+                Prawo przedsiębiorców), dlatego bez numeru NIP i REGON. Kontakt w sprawach danych osobowych:{" "}
                 <a
                   href={`mailto:${site.email}`}
                   className="text-accent-700 underline underline-offset-2"
@@ -46,14 +45,16 @@ export default function PrivacyPolicyPage() {
 
             <section>
               <h2 className="text-xl font-semibold">
-                2. Jakie dane zbieram i w jakim celu
+                2. Jakie dane zbieramy i w jakim celu
               </h2>
               <ul className="mt-3 list-disc space-y-2 pl-5">
                 <li>
-                  <strong>Formularz kontaktowy:</strong> imię, adres e-mail,
-                  numer telefonu (jeśli go podasz), orientacyjny budżet i treść wiadomości. Cel: odpowiedź na
-                  zapytanie i przygotowanie oferty (art. 6 ust. 1 lit. b i f
-                  RODO).
+                  <strong>Formularze wyceny i kontaktowy:</strong> imię i nazwisko
+                  lub nazwa firmy, adres e-mail, numer telefonu (jeśli go podasz),
+                  rodzaj i zakres projektu, liczba podstron, termin, orientacyjny
+                  budżet, adres obecnej strony i treść wiadomości (pola poza imieniem,
+                  e-mailem i rodzajem projektu są dobrowolne). Cel: odpowiedź na
+                  zapytanie i przygotowanie wyceny (art. 6 ust. 1 lit. b i f RODO).
                 </li>
                 <li>
                   <strong>Kontakt e-mailowy i telefoniczny:</strong> dane, które
@@ -75,7 +76,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold">3. Komu przekazuję dane</h2>
+              <h2 className="text-xl font-semibold">3. Komu przekazujemy dane</h2>
               <p className="mt-3">
                 Dane trafiają wyłącznie do podmiotów, które są niezbędne do
                 działania strony: dostawcy hostingu (Vercel Inc.), dostawcy obsługi
@@ -85,18 +86,18 @@ export default function PrivacyPolicyPage() {
                 się to wyłącznie na podstawie mechanizmów przewidzianych w RODO,
                 takich jak standardowe klauzule umowne zatwierdzone przez Komisję
                 Europejską lub decyzja stwierdzająca odpowiedni stopień ochrony.
-                Nie sprzedaję ani nie udostępniam danych w celach marketingowych.
+                Nie sprzedajemy ani nie udostępniamy danych w celach marketingowych.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold">
-                4. Jak długo przechowuję dane
+                4. Jak długo przechowujemy dane
               </h2>
               <p className="mt-3">
-                Korespondencję z zapytań przechowuję przez 24 miesiące od
+                Korespondencję z zapytań przechowujemy przez 24 miesiące od
                 ostatniego kontaktu, a jeśli dojdzie do współpracy, przez czas
-                jej trwania i do upływu okresu przedawnienia roszczeń. Opinie publikowane na stronie przechowuję
+                jej trwania i do upływu okresu przedawnienia roszczeń. Opinie publikowane na stronie przechowujemy
                 do czasu wycofania zgody. Dokumentację rozliczeniową przez okres
                 wymagany przepisami podatkowymi (5 lat).
               </p>
@@ -134,8 +135,7 @@ export default function PrivacyPolicyPage() {
             </section>
           </div>
         </Container>
-      </main>
-      <Footer />
-    </>
+      </div>
+    </Strona>
   );
 }
