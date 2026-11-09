@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { Naglowek, Wrap } from "./Strona";
 import { Reveal } from "../ui/Reveal";
 import { Ikona } from "../ui/Icons";
+import { OknoPrzegladarki } from "../ui/OknoPrzegladarki";
 
 /** Sekcja tekstowa: nagłówek i akapity, tło przechodzi z białego w jasnoszare. */
 export function Tekst({
@@ -46,16 +46,7 @@ export function ObrazTekst({
       <Wrap>
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
           <Reveal className="lg:col-span-5">
-            <div className="leaf-a relative overflow-hidden bg-accent-950 shadow-2xl shadow-accent-900/25">
-              <Image
-                src={image}
-                alt={imageAlt}
-                width={1600}
-                height={900}
-                sizes="(max-width: 1024px) 92vw, 460px"
-                className="aspect-[4/3] w-full object-cover object-top"
-              />
-            </div>
+            <OknoPrzegladarki src={image} alt={imageAlt} sizes="(max-width: 1024px) 92vw, 460px" />
           </Reveal>
           <Reveal delay={0.06} className="lg:col-span-7">
             <Naglowek lekki={lekki} gruby={gruby} />

@@ -7,7 +7,7 @@ import { projects, type Project } from "@/data/projects";
 function Karta({ project }: { project: Project }) {
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-[8px_26px] bg-[#f2f6f6] shadow-[0_10px_30px_-18px_rgba(18,22,27,0.35)] transition-shadow hover:shadow-[0_18px_40px_-18px_rgba(15,110,105,0.45)]">
-      <Link href={`/realizacje/${project.slug}`} className="relative block aspect-[3/2] overflow-hidden bg-ink-200">
+      <Link href={`/realizacje/${project.slug}`} className="relative block aspect-video overflow-hidden border-b border-ink-200 bg-ink-200">
         <Image
           src={project.image}
           alt={project.imageAlt}

@@ -4,6 +4,7 @@ import { Naglowek, Wrap } from "./Strona";
 import { Reveal } from "../ui/Reveal";
 import { Ikona, type IkonaNazwa } from "../ui/Icons";
 import { CallButton } from "../CallReveal";
+import { OknoPrzegladarki } from "../ui/OknoPrzegladarki";
 import { atuty, technologie, wyroznienia } from "@/data/wspolne";
 import { karty } from "@/data/services";
 import { site } from "@/data/site";
@@ -25,19 +26,15 @@ export function Doswiadczenie({
       <Wrap>
         <div className="grid items-center gap-10 lg:grid-cols-3 lg:gap-14">
           <Reveal>
-            <div className="leaf-a relative mx-auto aspect-square max-w-sm overflow-hidden bg-accent-950 shadow-xl">
-              <Image
+            <div className="mx-auto max-w-md">
+              <OknoPrzegladarki
                 src="/portfolio/projekt-7.png"
-                alt="Fragment strony zakładu tapicerskiego wykonanej przez Webuko"
-                fill
-                sizes="(max-width: 1024px) 80vw, 360px"
-                className="scale-[1.35] -rotate-6 object-cover object-top"
+                alt="Strona zakładu tapicerskiego wykonana przez Webuko"
+                sizes="(max-width: 1024px) 90vw, 360px"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-accent-950/90 to-transparent p-5 pt-16">
-                <p className="font-display text-sm font-bold tracking-wide text-white uppercase">
-                  Projekt · kod · wdrożenie
-                </p>
-              </div>
+              <p className="mt-4 text-center font-display text-sm font-bold tracking-wide text-accent-700 uppercase">
+                Projekt · kod · wdrożenie
+              </p>
             </div>
           </Reveal>
           <Reveal delay={0.06} className="lg:col-span-2">
